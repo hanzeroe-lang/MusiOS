@@ -1,4 +1,4 @@
-package com.convx.music.artistvideo
+package com.musios.music.artistvideo
 
 import android.view.TextureView
 import android.view.ViewGroup

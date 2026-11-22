@@ -1,4 +1,4 @@
-package com.convx.music.betterlyrics.models
+package com.musios.music.betterlyrics.models
 
 import kotlinx.serialization.Serializable
 

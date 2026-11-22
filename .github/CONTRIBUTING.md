@@ -6,7 +6,7 @@ Thanks for considering a contribution to **Convx**. This document is the real, c
 
 Convx is a single Android Studio project (Gradle multi-module). The pieces you'll actually touch:
 
-* **`app/`** — the app itself. Compose UI lives under `app/src/main/kotlin/com/convx/music/ui/`, screens under `ui/screens/`, `viewmodels/` per screen, navigation wired in `ui/screens/NavigationBuilder.kt`.
+* **`app/`** — the app itself. Compose UI lives under `app/src/main/kotlin/com/musios/music/ui/`, screens under `ui/screens/`, `viewmodels/` per screen, navigation wired in `ui/screens/NavigationBuilder.kt`.
 * **`ui/component/GlassEffect.kt`** + **`ui/component/backdrop/`** — the Liquid Glass system (a vendored, source-included copy of [Kyant0/backdrop](https://github.com/Kyant0/backdrop)). `Modifier.liquidGlass(...)` is the entry point most UI code needs; see the doc comment on `GlassCircleButton` for a worked example of a glass surface sampling a local backdrop.
 * **`innertube/`** — the unofficial YouTube Music (InnerTube) API client, kept independent of the app module.
 * Other top-level modules (`kugou`, `lrclib`, `kizzy`, `lastfm`, `betterlyrics`, `simpmusic`, `youlyplus`, `shazamkit`, `spotify`, ...) are individually-scoped integrations — a lyrics/Discord-RPC/Last.fm provider, etc. Keep changes to one of these scoped to that module.
