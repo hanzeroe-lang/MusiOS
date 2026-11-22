@@ -1,6 +1,6 @@
-package com.convx.music.lyrics
+package com.musios.music.lyrics
 
-import com.convx.music.lyrics.bitchord.*
+import com.musios.music.lyrics.bitchord.*
 import org.junit.Assert.*
 import org.junit.Test
 

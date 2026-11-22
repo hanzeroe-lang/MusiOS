@@ -35,6 +35,6 @@ Port the reference app's spatial audio feature into Convx.
 ## Context
 
 the reference app is cloned in-repo at `the reference app/` (do not re-fetch from GitHub).
-Bit Perfect mode shipped this session: `app/src/main/kotlin/com/convx/music/playback/audio/BitPerfectAudio.kt`,
+Bit Perfect mode shipped this session: `app/src/main/kotlin/com/musios/music/playback/audio/BitPerfectAudio.kt`,
 `EqualizerService.kt` (`setBitPerfectBypass`), `BitPerfectKey` in
 `PreferenceKeys.kt`.

@@ -41,17 +41,17 @@ the bypass is Convx-specific and was modelled on Convx's own EQ bypass.
 
 ## What landed in Convx
 
-New — `app/src/main/kotlin/com/convx/music/playback/audio/SpatialAudioProcessor.kt`
+New — `app/src/main/kotlin/com/musios/music/playback/audio/SpatialAudioProcessor.kt`
 Straight port (package + license header changed, `java.nio.ByteBuffer` imported
 rather than fully-qualified in the signature, doc reworded to point at Convx's
 `EqualizerService.setBitPerfectBypass` for the bypass rationale). DSP constants,
 delay length, `NOT_SET` bail-out and clamping are byte-for-byte the same.
 
-`app/src/main/kotlin/com/convx/music/constants/PreferenceKeys.kt`
+`app/src/main/kotlin/com/musios/music/constants/PreferenceKeys.kt`
 `SpatialAudioKey = booleanPreferencesKey("spatialAudio")`, documented next to
 `BitPerfectKey`.
 
-`app/src/main/kotlin/com/convx/music/playback/MusicService.kt`
+`app/src/main/kotlin/com/musios/music/playback/MusicService.kt`
 - `cachedSpatialAudio` mirror field, alongside `cachedBitPerfect` /
   `cachedSkipSilence`.
 - `playerSpatialProcessors: HashMap<Player, SpatialAudioProcessor>`, mirroring
@@ -83,7 +83,7 @@ delay length, `NOT_SET` bail-out and clamping are byte-for-byte the same.
 `spatial_audio`, `spatial_audio_description`,
 `spatial_audio_disabled_by_bit_perfect` (added beside the Bit Perfect block).
 
-`app/src/main/kotlin/com/convx/music/ui/screens/settings/PlayerAdvancedSettings.kt`
+`app/src/main/kotlin/com/musios/music/ui/screens/settings/PlayerAdvancedSettings.kt`
 An `IosSettingsItem` immediately after the Bit Perfect row (this is the page
 that already owns audio-pipeline power-user toggles): switch bound to
 `SpatialAudioKey`, forced to render off + disabled while Bit Perfect is on, with
@@ -118,7 +118,7 @@ row's own crossfade display — noted, not touched.)
 
 ## Check left behind
 
-`app/src/test/kotlin/com/convx/music/playback/audio/SpatialAudioProcessorTest.kt`
+`app/src/test/kotlin/com/musios/music/playback/audio/SpatialAudioProcessorTest.kt`
 — three plain-JUnit cases, no framework/fixtures:
 1. mono and float formats leave the processor inactive (`NOT_SET`, not a throw)
    — the regression that took the reference app's local library down.

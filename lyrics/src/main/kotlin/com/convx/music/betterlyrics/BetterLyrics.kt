@@ -1,6 +1,6 @@
-package com.convx.music.betterlyrics
+package com.musios.music.betterlyrics
 
-import com.convx.music.betterlyrics.models.TTMLResponse
+import com.musios.music.betterlyrics.models.TTMLResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.okhttp.OkHttp

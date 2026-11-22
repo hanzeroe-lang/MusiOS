@@ -8,9 +8,9 @@
  * "Lyrics from Unison (https://unison.boidu.dev)"
  */
 
-package com.convx.music.lyrics
+package com.musios.music.lyrics
 
-import com.convx.music.betterlyrics.TTMLParser
+import com.musios.music.betterlyrics.TTMLParser
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.okhttp.OkHttp

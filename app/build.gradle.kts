@@ -28,12 +28,12 @@ plugins {
 }
 
 android {
-    namespace = "com.convx.music"
+    namespace = "com.musios.music"
     compileSdk = 37
     ndkVersion = "27.0.12077973"
 
     defaultConfig {
-        applicationId = "com.convx.music"
+        applicationId = "com.musios.music"
         minSdk = 26
         targetSdk = 36
         versionCode = appVersionCode
@@ -137,8 +137,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
+            isMinifyEnabled = false
+            isShrinkResources = false
             isCrunchPngs = false
             isDebuggable = false
             if (file("keystore/release.keystore").exists()) {

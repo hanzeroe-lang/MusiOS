@@ -1,5 +1,5 @@
 #!/system/bin/sh
-PKG=com.convx.music
+PKG=com.musios.music
 OUT=/sdcard/convx_prof
 mkdir -p $OUT
 hb() { echo "$(date +%H:%M:%S) $*" >> $OUT/heartbeat.txt; }
@@ -28,7 +28,7 @@ while [ $(date +%s) -lt $END ]; do
   if [ -n "$LV" ] && [ "$LV" -lt 15 ]; then hb "LOW BATT"; break; fi
 
   # ---------- HOME ----------
-  am start -n com.convx.music/.MainActivity >/dev/null 2>&1
+  am start -n com.musios.music/.MainActivity >/dev/null 2>&1
   sleep 2
   block_start home
   input tap 102 2216; pause 3 2
@@ -75,7 +75,7 @@ while [ $(date +%s) -lt $END ]; do
   block_end search search
 
   # ---------- NOW PLAYING FULL WORKOUT ----------
-  am start -n com.convx.music/.MainActivity >/dev/null 2>&1
+  am start -n com.musios.music/.MainActivity >/dev/null 2>&1
   sleep 1
   input tap 537 2216
   pause 3 2

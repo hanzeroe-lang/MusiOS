@@ -1,4 +1,4 @@
-package com.convx.music.canvas
+package com.musios.music.canvas
 
 import java.io.StringReader
 import javax.xml.parsers.DocumentBuilderFactory

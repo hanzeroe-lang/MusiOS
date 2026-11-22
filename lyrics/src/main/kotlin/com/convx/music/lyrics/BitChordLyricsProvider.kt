@@ -1,7 +1,7 @@
-package com.convx.music.lyrics
+package com.musios.music.lyrics
 
 import android.content.Context
-import com.convx.music.lyrics.bitchord.*
+import com.musios.music.lyrics.bitchord.*
 import kotlinx.coroutines.CancellationException
 import java.util.Locale
 

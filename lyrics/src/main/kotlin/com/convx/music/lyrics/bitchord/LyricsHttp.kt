@@ -1,5 +1,5 @@
 /** Adapted from BitChord (kushagrasinghx/BitChord), GPL-3.0. See NOTICE. */
-package com.convx.music.lyrics.bitchord
+package com.musios.music.lyrics.bitchord
 
 import kotlinx.serialization.json.Json
 import okhttp3.Request

@@ -3,7 +3,7 @@
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.musixmatch
+package com.musios.music.musixmatch
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName

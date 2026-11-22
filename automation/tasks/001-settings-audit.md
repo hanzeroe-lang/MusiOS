@@ -35,7 +35,7 @@ crashes when changed.
 
 ## Context
 
-Settings screens live under `app/src/main/kotlin/com/convx/music/ui/screens/settings/`.
+Settings screens live under `app/src/main/kotlin/com/musios/music/ui/screens/settings/`.
 Preference keys in `constants/PreferenceKeys.kt`. This is the user's stated
 #1 priority — "everything should work from settings, and its intended
 behaviour."

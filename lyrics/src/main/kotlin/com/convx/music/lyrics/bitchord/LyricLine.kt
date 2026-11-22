@@ -1,5 +1,5 @@
 /** Adapted from BitChord (kushagrasinghx/BitChord), GPL-3.0. See NOTICE. */
-package com.convx.music.lyrics.bitchord
+package com.musios.music.lyrics.bitchord
 
 /**
  * One word of a line, with the stretch of the song it is sung over.

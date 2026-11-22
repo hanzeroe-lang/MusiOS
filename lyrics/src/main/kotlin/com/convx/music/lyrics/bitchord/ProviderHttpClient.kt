@@ -1,4 +1,4 @@
-package com.convx.music.lyrics.bitchord
+package com.musios.music.lyrics.bitchord
 
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit

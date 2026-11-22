@@ -7,7 +7,7 @@
 #
 # ponytail: wildcards mark the whole app hot; replace with a Macrobenchmark-generated
 # profile (launch + Home scroll + open player) if odex size or install-time dexopt matters.
-HSPLcom/convx/music/**->**(**)**
-Lcom/convx/music/**;
+HSPLcom/musios/music/**->**(**)**
+Lcom/musios/music/**;
 HSPLcom/music/innertube/**->**(**)**
 Lcom/music/innertube/**;

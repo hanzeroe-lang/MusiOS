@@ -1,4 +1,4 @@
-package com.convx.music.canvas
+package com.musios.music.canvas
 
 import java.net.URI
 import kotlinx.serialization.json.*

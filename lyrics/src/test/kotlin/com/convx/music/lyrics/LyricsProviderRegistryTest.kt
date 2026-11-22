@@ -1,4 +1,4 @@
-package com.convx.music.lyrics
+package com.musios.music.lyrics
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertSame

@@ -213,7 +213,7 @@ content does not appear. (The overlay that pops in at t≈3.2 with
 `✕ / ⚙ / ■ Stop` is the system screen-recorder control, not app UI.)
 
 **Root cause — `HomeViewModel.toggleChip`,
-`app/src/main/kotlin/com/convx/music/viewmodels/HomeViewModel.kt:714-720`:**
+`app/src/main/kotlin/com/musios/music/viewmodels/HomeViewModel.kt:714-720`:**
 
 ```kotlin
 fun toggleChip(chip: HomePage.Chip?) {

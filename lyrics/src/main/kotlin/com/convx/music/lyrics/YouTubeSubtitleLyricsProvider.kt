@@ -3,7 +3,7 @@
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.lyrics
+package com.musios.music.lyrics
 
 import com.music.innertube.YouTube
 

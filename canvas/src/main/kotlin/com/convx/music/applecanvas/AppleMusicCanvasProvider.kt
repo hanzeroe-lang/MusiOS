@@ -4,9 +4,9 @@
  */
 // Ported from cosmictaserdev-creator/convx (https://github.com/cosmictaserdev-creator/Convx), GPL-3.0.
 
-package com.convx.music.applecanvas
+package com.musios.music.applecanvas
 
-import com.convx.music.canvas.CanvasArtwork
+import com.musios.music.canvas.CanvasArtwork
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.okhttp.OkHttp

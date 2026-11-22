@@ -3,9 +3,9 @@
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.lyrics
+package com.musios.music.lyrics
 
-import com.convx.music.betterlyrics.BetterLyrics
+import com.musios.music.betterlyrics.BetterLyrics
 
 object BetterLyricsProvider : LyricsProvider {
     override val id = "BetterLyrics"

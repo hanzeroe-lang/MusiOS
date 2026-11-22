@@ -1,4 +1,4 @@
-package com.convx.music.lyrics
+package com.musios.music.lyrics
 
 /** Capabilities come from real timestamps, never from a provider's advertised name. */
 enum class LyricsSyncLevel(val label: String) {

@@ -1,4 +1,4 @@
-package com.convx.music.canvas
+package com.musios.music.canvas
 
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
