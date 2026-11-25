@@ -1,21 +1,19 @@
 ﻿{
   "versions": [
     {
-      "version": "1.1.0",
-      "versionCode": 10100,
-      "date": "2026-11-25",
+      "version": "1.1.1",
+      "versionCode": 10101,
+      "date": "2026-11-26",
       "changes": [
-        "Ported the full BitChord synced-lyrics animation engine",
-        "Frame-steered playhead clock, word sweep, glow, falloff blur/scale and staggered scroll",
-        "Lyrics now driven by live player position and word-timed lyrics data",
-        "New selectable and default lyrics style: BitChord (full animation)"
+        "Fix: BitChord lyrics now follow live playback position (no longer static)",
+        "Fix: lyrics font family, text size and line spacing now apply to the animated renderer"
       ]
     },
     {
-      "version": "1.0.0",
-      "versionCode": 10000,
-      "date": "2026-11-23",
-      "changes": ["Initial MusiOS release based on Convx 2.0.4-nightly"]
+      "version": "1.1.0",
+      "versionCode": 10100,
+      "date": "2026-11-25",
+      "changes": ["Full BitChord synced-lyrics animation engine port"]
     }
   ]
 }

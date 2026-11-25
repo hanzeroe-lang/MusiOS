@@ -2027,17 +2027,25 @@ internal fun LyricsPanel(
                 }
             } else {
                 val alignEnd = duet && line.alignment == LyricAlignment.End
+                // MusiOS's lyrics font/size/spacing preferences, carried in by
+                // BitchordLyricsView. The renderer's own metrics are the 34sp
+                // reference, so everything scales from them.
+                val appearance = LocalLyricsAppearance.current
+                val typeScale = appearance.fontSizeSp / 34f
+                val leadingScale = appearance.lineSpacing / 1.3f
                 val style = if (isSynced) {
                     MaterialTheme.typography.headlineLarge.copy(
-                        fontSize = 34.sp,
-                        lineHeight = 41.sp,
+                        fontFamily = appearance.fontFamily,
+                        fontSize = appearance.fontSizeSp.sp,
+                        lineHeight = (appearance.fontSizeSp * 41f / 34f * leadingScale).sp,
                         fontWeight = FontWeight.ExtraBold,
                         textAlign = if (alignEnd) TextAlign.End else TextAlign.Start,
                     )
                 } else {
                     MaterialTheme.typography.headlineMedium.copy(
-                        fontSize = 30.sp,
-                        lineHeight = 38.sp,
+                        fontFamily = appearance.fontFamily,
+                        fontSize = (appearance.fontSizeSp * 30f / 34f).sp,
+                        lineHeight = (appearance.fontSizeSp * 38f / 34f * leadingScale).sp,
                         fontWeight = FontWeight.ExtraBold,
                         textAlign = if (alignEnd) TextAlign.End else TextAlign.Start,
                     )
@@ -2176,8 +2184,8 @@ internal fun LyricsPanel(
                 // seeks to the same place.
                 val sub = subReveal.lines?.getOrNull(index)
                 val subStyle = style.copy(
-                    fontSize = SUB_LYRIC_FONT_SIZE,
-                    lineHeight = SUB_LYRIC_LINE_HEIGHT,
+                    fontSize = (SUB_LYRIC_FONT_SIZE.value * typeScale).sp,
+                    lineHeight = (SUB_LYRIC_LINE_HEIGHT.value * typeScale * leadingScale).sp,
                     fontWeight = FontWeight.Bold,
                 )
                 // The answering voice is only on screen while it is being sung,
@@ -2278,8 +2286,8 @@ internal fun LyricsPanel(
                                 line = backing.withoutBracketPunctuation(),
                                 clock = clock,
                                 style = style.copy(
-                                    fontSize = BACKING_FONT_SIZE,
-                                    lineHeight = BACKING_LINE_HEIGHT,
+                                    fontSize = (BACKING_FONT_SIZE.value * typeScale).sp,
+                                    lineHeight = (BACKING_LINE_HEIGHT.value * typeScale * leadingScale).sp,
                                 ),
                                 isActive = isActive,
                                 sung = sung,
@@ -2308,8 +2316,8 @@ internal fun LyricsPanel(
                                         line = subBacking.withoutBracketPunctuation(),
                                         clock = clock,
                                         style = subStyle.copy(
-                                            fontSize = SUB_BACKING_FONT_SIZE,
-                                            lineHeight = SUB_BACKING_LINE_HEIGHT,
+                                            fontSize = (SUB_BACKING_FONT_SIZE.value * typeScale).sp,
+                                            lineHeight = (SUB_BACKING_LINE_HEIGHT.value * typeScale * leadingScale).sp,
                                         ),
                                         isActive = isActive,
                                         sung = sung,

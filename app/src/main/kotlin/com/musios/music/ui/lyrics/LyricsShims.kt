@@ -7,6 +7,7 @@ import androidx.compose.material.icons.rounded.ChevronRight
 import androidx.compose.material.icons.rounded.MusicNote
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -24,6 +25,7 @@ import androidx.compose.ui.graphics.drawscope.clipRect
 import androidx.compose.ui.graphics.drawscope.translate
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
 import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.layout.layout
@@ -38,6 +40,15 @@ import com.musios.music.lyrics.bitchord.LyricLine
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import java.util.Locale
+
+/** App-controlled type for the ported renderer (font, size and line spacing). */
+internal data class LyricsAppearance(
+    val fontFamily: FontFamily? = null,
+    val fontSizeSp: Float = 34f,
+    val lineSpacing: Float = 1.3f,
+)
+
+internal val LocalLyricsAppearance = staticCompositionLocalOf { LyricsAppearance() }
 
 /** The player's side margin; scrollable lyric panels reach back across it. */
 internal val PLAYER_GUTTER = 30.dp

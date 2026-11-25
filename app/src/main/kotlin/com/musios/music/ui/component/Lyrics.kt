@@ -698,8 +698,11 @@ fun Lyrics(
         BitchordLyricsView(
             lines = lines.toBitChordLines(),
             trackKey = mediaMetadata?.id ?: "lyrics",
-            positionMs = { currentPlaybackPosition + bitChordOffset },
+            positionMs = { playerConnection.player.currentPosition + bitChordOffset },
             isPlaying = bitChordPlaying,
+            fontFamily = lyricsFontFamily,
+            fontSizeSp = lyricsTextSize,
+            lineSpacing = lyricsLineSpacing,
             onSeekToLine = { lineTimeMs -> playerConnection.seekTo((lineTimeMs - bitChordOffset).coerceAtLeast(0L)) },
             modifier = modifier.fillMaxSize(),
         )

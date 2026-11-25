@@ -2,9 +2,11 @@ package com.musios.music.ui.lyrics
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontFamily
 import com.musios.music.lyrics.LyricsEntry
 import com.musios.music.lyrics.WordTimestamp
 import com.musios.music.lyrics.bitchord.LyricAlignment
@@ -24,6 +26,9 @@ fun BitchordLyricsView(
     trackKey: String,
     positionMs: () -> Long,
     isPlaying: Boolean,
+    fontFamily: FontFamily? = null,
+    fontSizeSp: Float = 34f,
+    lineSpacing: Float = 1.3f,
     onSeekToLine: (Long) -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -45,18 +50,26 @@ fun BitchordLyricsView(
     }
 
     val playhead = rememberLyricPlayhead(position)
-    LyricsPanel(
-        lines = lines,
-        trackKey = trackKey,
-        playhead = playhead,
-        looking = false,
-        isPlaying = isPlaying,
-        onSeekToLine = onSeekToLine,
-        controlsOpen = false,
-        onRevealControls = {},
-        onHideControls = {},
-        modifier = modifier.fillMaxSize(),
-    )
+    CompositionLocalProvider(
+        LocalLyricsAppearance provides LyricsAppearance(
+            fontFamily = fontFamily,
+            fontSizeSp = fontSizeSp,
+            lineSpacing = lineSpacing,
+        ),
+    ) {
+        LyricsPanel(
+            lines = lines,
+            trackKey = trackKey,
+            playhead = playhead,
+            looking = false,
+            isPlaying = isPlaying,
+            onSeekToLine = onSeekToLine,
+            controlsOpen = false,
+            onRevealControls = {},
+            onHideControls = {},
+            modifier = modifier.fillMaxSize(),
+        )
+    }
 }
 
 /** Converts the app's parsed LRC entries into the renderer's synced model. */
