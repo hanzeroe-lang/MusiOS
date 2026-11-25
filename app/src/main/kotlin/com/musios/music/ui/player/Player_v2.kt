@@ -49,6 +49,8 @@ import androidx.compose.runtime.*
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
@@ -240,6 +242,7 @@ private fun PlayerV2Content(
     val context = androidx.compose.ui.platform.LocalContext.current
 
     val playerConnection = LocalPlayerConnection.current ?: return
+    val haptic = LocalHapticFeedback.current
     val ui = rememberPlayerUiState(playerConnection)
     val mediaMetadata by ui.mediaMetadata
     val videoLookup by ui.rememberVideoStreamLookup()
@@ -722,7 +725,7 @@ private fun PlayerV2Content(
         Column(modifier = Modifier.weight(1f)) {
             FadeSwapText(
                 textMetadata?.title ?: "Unknown",
-                style = AppTheme.typography.bodyLarge.copy(fontSize = 17.sp, lineHeight = 22.sp, letterSpacing = (-0.43).sp),
+                style = AppTheme.typography.bodyLarge.copy(fontSize = 16.sp, lineHeight = 21.sp, letterSpacing = (-0.43).sp),
                 color = adaptivePrimary,
                 fontWeight = FontWeight.SemiBold,
                 scroll = !state.isCollapsed,
@@ -733,7 +736,7 @@ private fun PlayerV2Content(
             )
             FadeSwapText(
                 textMetadata?.artists?.joinToString { it.name }.orEmpty(),
-                style = AppTheme.typography.bodyLarge.copy(fontSize = 17.sp, lineHeight = 22.sp, letterSpacing = (-0.43).sp),
+                style = AppTheme.typography.bodyLarge.copy(fontSize = 16.sp, lineHeight = 21.sp, letterSpacing = (-0.43).sp),
                 color = artistLabelColor,
                 fontWeight = FontWeight.Normal,
                 scroll = !state.isCollapsed,
@@ -757,8 +760,8 @@ private fun PlayerV2Content(
                 .graphicsLayer { if (additiveChrome) alpha = AdditiveChromeContentAlpha }
         ) {
             IconButton(
-                onClick = playerConnection::toggleLike,
-                modifier = Modifier.size(40.dp),
+                onClick = { haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove); playerConnection.toggleLike() },
+                modifier = Modifier.size(36.dp),
             ) {
                 LikeGlyphSwap(shownLike) { isLiked, songId ->
                     PlayerGlyph(
@@ -766,7 +769,7 @@ private fun PlayerV2Content(
                         fallback = if (isLiked) R.drawable.flamingo_favorited else R.drawable.flamingo_favorite,
                         // Show like state with the filled or outline glyph, not a color change.
                         tint = adaptivePrimary,
-                        modifier = Modifier.size(28.dp).likePop(isLiked, songId),
+                        modifier = Modifier.size(26.dp).likePop(isLiked, songId),
                         contentDescription = "Like",
                     )
                 }
@@ -774,7 +777,7 @@ private fun PlayerV2Content(
 
 
             IconButton(
-                modifier = Modifier.size(40.dp),
+                modifier = Modifier.size(36.dp),
                 // Keep the player visible by using a popover instead of a sheet.
                 onClick = { showV2Options = true }
             ) {
@@ -812,7 +815,7 @@ private fun PlayerV2Content(
                     slot = PlayerIconSlot.V2_MORE,
                     fallback = R.drawable.flamingo_more,
                     tint = adaptivePrimary,
-                    modifier = Modifier.size(28.dp),
+                    modifier = Modifier.size(26.dp),
                     contentDescription = "Options",
                 )
             }
@@ -851,9 +854,9 @@ private fun PlayerV2Content(
                 if (!showVideoSwitch) {
                     Box(
                         modifier = Modifier
-                            .width(4.dp)
-                            .height(24.dp)
-                            .clip(RoundedCornerShape(2.dp))
+                            .width(54.dp)
+                            .height(5.dp)
+                            .clip(RoundedCornerShape(2.5.dp))
                             .background(adaptivePrimary.copy(alpha = 0.3f))
                             .clickable { state.collapseSoft() }
                     )
@@ -1245,7 +1248,7 @@ private fun PlayerV2Content(
                                     }
                                     Box(
                                         modifier = headerArtworkModifier
-                                            .size(60.dp)
+                                            .size(56.dp)
                                             .then(if (!isHeroLook || targetState == PlayerInternalState.COVER) Modifier.fullArtworkMorphTarget(
                                                 cornerRadiusPx = with(androidx.compose.ui.platform.LocalDensity.current) { 7.dp.toPx() },
                                                 travels = !isHeroLook,
@@ -1299,7 +1302,7 @@ private fun PlayerV2Content(
                                     Column(modifier = Modifier.weight(1f)) {
                                         Text(
                                             textMetadata?.title ?: "Unknown",
-                                            style = AppTheme.typography.bodyLarge.copy(fontSize = 17.sp, lineHeight = 22.sp, letterSpacing = (-0.43).sp),
+                                            style = AppTheme.typography.bodyLarge.copy(fontSize = 16.sp, lineHeight = 21.sp, letterSpacing = (-0.43).sp),
                                             color = adaptivePrimary,
                                             fontWeight = FontWeight.SemiBold,
                                             maxLines = 1,
@@ -1314,7 +1317,7 @@ private fun PlayerV2Content(
                                         )
                                         Text(
                                             textMetadata?.artists?.joinToString { it.name }.orEmpty(),
-                                            style = AppTheme.typography.bodyLarge.copy(fontSize = 17.sp, lineHeight = 22.sp, letterSpacing = (-0.43).sp),
+                                            style = AppTheme.typography.bodyLarge.copy(fontSize = 16.sp, lineHeight = 21.sp, letterSpacing = (-0.43).sp),
                                             fontWeight = FontWeight.Normal,
                                             color = artistLabelColor,
                                             maxLines = 1,
@@ -1341,22 +1344,22 @@ private fun PlayerV2Content(
                                             .graphicsLayer { if (additiveChrome) alpha = AdditiveChromeContentAlpha }
                                     ) {
                                         IconButton(
-                                            onClick = playerConnection::toggleLike,
-                                            modifier = Modifier.size(40.dp),
+                                            onClick = { haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove); playerConnection.toggleLike() },
+                                            modifier = Modifier.size(36.dp),
                                         ) {
                                             LikeGlyphSwap(shownLike) { isLiked, songId ->
                                                 PlayerGlyph(
                                                     slot = if (isLiked) PlayerIconSlot.V2_LIKED else PlayerIconSlot.V2_LIKE,
                                                     fallback = if (isLiked) R.drawable.flamingo_favorited else R.drawable.flamingo_favorite,
                                                     tint = adaptivePrimary,
-                                                    modifier = Modifier.size(28.dp).likePop(isLiked, songId),
+                                                    modifier = Modifier.size(26.dp).likePop(isLiked, songId),
                                                     contentDescription = "Like",
                                                 )
                                             }
                                         }
 
                                         IconButton(
-                                            modifier = Modifier.size(40.dp),
+                                            modifier = Modifier.size(36.dp),
                                             onClick = {
                                                 if (targetState == PlayerInternalState.QUEUE || targetState == PlayerInternalState.LYRICS) {
                                                     showV2Options = true
@@ -1385,7 +1388,7 @@ private fun PlayerV2Content(
                                                 slot = PlayerIconSlot.V2_MORE,
                                                 fallback = R.drawable.flamingo_more,
                                                 tint = adaptivePrimary,
-                                                modifier = Modifier.size(28.dp),
+                                                modifier = Modifier.size(26.dp),
                                                 contentDescription = "Options",
                                             )
                                             if (targetState == PlayerInternalState.QUEUE) mediaMetadata?.let {
@@ -1628,7 +1631,7 @@ private fun PlayerV2Content(
                     Row(
                         modifier = Modifier
                             .align(Alignment.CenterHorizontally)
-                            .widthIn(max = 302.dp) // 292pt glyph frame + 2x5: 61pt targets centred on 51pt glyphs
+                            .widthIn(max = 286.dp) // 292pt glyph frame + 2x5: 61pt targets centred on 51pt glyphs
                             .fillMaxWidth()
                             .flamingoChrome(additiveChrome)
                             .graphicsLayer { if (additiveChrome) alpha = AdditiveChromeContentAlpha },
@@ -1637,11 +1640,11 @@ private fun PlayerV2Content(
                     ) {
                         val previousInteraction = remember { MutableInteractionSource() }
                         IconButton(
-                            onClick = { if (!isListenTogetherGuest && canSkipPrevious) playerConnection.requestSkip(forward = false) },
+                            onClick = { haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove); if (!isListenTogetherGuest && canSkipPrevious) playerConnection.requestSkip(forward = false) },
                             enabled = !isListenTogetherGuest && canSkipPrevious,
                             interactionSource = previousInteraction,
                             modifier = Modifier
-                                .size(61.dp)
+                                .size(56.dp)
                                 .transportPressDisc(previousInteraction, adaptivePrimary.copy(alpha = 0.16f))
                                 .alpha(if (isListenTogetherGuest || !canSkipPrevious) 0.4f else 1f)
                         ) {
@@ -1649,7 +1652,7 @@ private fun PlayerV2Content(
                                 slot = PlayerIconSlot.V2_PREVIOUS,
                                 fallback = R.drawable.flamingo_rewind,
                                 tint = adaptivePrimary,
-                                modifier = Modifier.size(44.dp).skipGlyphPress(previousInteraction, direction = -1f),
+                                modifier = Modifier.size(36.dp).skipGlyphPress(previousInteraction, direction = -1f),
                                 contentDescription = "Previous",
                             )
                         }
@@ -1667,7 +1670,7 @@ private fun PlayerV2Content(
                             },
                             interactionSource = playInteraction,
                             modifier = Modifier
-                                .size(72.dp)
+                                .size(66.dp)
                                 .transportPressDisc(playInteraction, adaptivePrimary.copy(alpha = 0.16f))
                         ) {
                             if (isListenTogetherGuest) {
@@ -1681,8 +1684,8 @@ private fun PlayerV2Content(
                                     playFallback = R.drawable.flamingo_play,
                                     pauseFallback = R.drawable.flamingo_pause,
                                     tint = adaptivePrimary,
-                                    playSize = 44.dp,
-                                    pauseSize = 44.dp,
+                                    playSize = 40.dp,
+                                    pauseSize = 40.dp,
                                     playDescription = "Play",
                                     pauseDescription = "Pause",
                                 )
@@ -1693,11 +1696,11 @@ private fun PlayerV2Content(
 
                         val nextInteraction = remember { MutableInteractionSource() }
                         IconButton(
-                            onClick = { if (!isListenTogetherGuest && canSkipNext) playerConnection.requestSkip(forward = true) },
+                            onClick = { haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove); if (!isListenTogetherGuest && canSkipNext) playerConnection.requestSkip(forward = true) },
                             enabled = !isListenTogetherGuest && canSkipNext,
                             interactionSource = nextInteraction,
                             modifier = Modifier
-                                .size(61.dp)
+                                .size(56.dp)
                                 .transportPressDisc(nextInteraction, adaptivePrimary.copy(alpha = 0.16f))
                                 .alpha(if (isListenTogetherGuest || !canSkipNext) 0.4f else 1f)
                         ) {
@@ -1705,7 +1708,7 @@ private fun PlayerV2Content(
                                 slot = PlayerIconSlot.V2_NEXT,
                                 fallback = R.drawable.flamingo_fforward,
                                 tint = adaptivePrimary,
-                                modifier = Modifier.size(44.dp).skipGlyphPress(nextInteraction, direction = 1f),
+                                modifier = Modifier.size(36.dp).skipGlyphPress(nextInteraction, direction = 1f),
                                 contentDescription = "Next",
                             )
                         }
@@ -2036,7 +2039,7 @@ internal fun V2TabGlyph(active: Boolean, tint: Color, chrome: Modifier = Modifie
                     androidx.compose.foundation.shape.CircleShape,
                 ),
         )
-        glyph(Modifier.size(28.dp), if (lightInk) Color.Black.copy(alpha = 0.82f) else Color.White)
+        glyph(Modifier.size(26.dp), if (lightInk) Color.Black.copy(alpha = 0.82f) else Color.White)
     }
 }
 

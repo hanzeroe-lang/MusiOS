@@ -16,7 +16,9 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.gestures.snapping.SnapPosition
 import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -395,7 +397,19 @@ internal fun HomeShelfCardBody(
                 .clip(cardShape)
                 .border(0.25.dp, Color.Black.copy(alpha = 0.1f), cardShape),
         )
-        Spacer(Modifier.height(4.dp))
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(18.dp)
+                .background(
+                    androidx.compose.ui.graphics.Brush.verticalGradient(
+                        listOf(
+                            androidx.compose.ui.graphics.Color.Transparent,
+                            androidx.compose.ui.graphics.Color(0xFF121212).copy(alpha = 0.96f),
+                        )
+                    )
+                )
+        )
         Text(
             text = title,
             style = AppTheme.typography.bodyMedium,

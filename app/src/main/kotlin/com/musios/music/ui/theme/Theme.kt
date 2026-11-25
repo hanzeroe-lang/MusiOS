@@ -87,7 +87,7 @@ fun ConvxTheme(
         if (appTextColorInt != 0) withBlack.flatText(Color(appTextColorInt)) else withBlack
     }
 
-    val (selectedFont) = rememberPreference(SelectedFontKey, defaultValue = AppFont.PLUS_JAKARTA_SANS.value)
+    val (selectedFont) = rememberPreference(SelectedFontKey, defaultValue = AppFont.SYSTEM.value)
     val customFont = rememberCustomFontFamily()
 
     val appFont = remember(selectedFont, customFont) {

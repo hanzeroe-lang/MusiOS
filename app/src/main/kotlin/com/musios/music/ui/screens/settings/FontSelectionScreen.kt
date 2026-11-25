@@ -75,7 +75,7 @@ fun FontSelectionScreen(
 ) {
     val (selectedFont, onSelectedFontChange) = rememberPreference(
         SelectedFontKey,
-        defaultValue = AppFont.PLUS_JAKARTA_SANS.value
+        defaultValue = AppFont.SYSTEM.value
     )
 
     val (brandFont, onBrandFontChange) = rememberPreference(

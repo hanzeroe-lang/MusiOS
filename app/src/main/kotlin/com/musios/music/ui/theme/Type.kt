@@ -20,7 +20,7 @@ val SfProFontFamily = FontFamily(
     Font(R.font.sf_pro_text_regular, FontWeight.Normal),
     Font(R.font.sf_pro_text_medium, FontWeight.Medium),
     Font(R.font.sf_pro_text_semibold, FontWeight.SemiBold),
-    Font(R.font.sf_pro_text_bold, FontWeight.Bold),
+    Font(R.font.sf_pro_display_bold, FontWeight.Bold),
 )
 
 @OptIn(ExperimentalTextApi::class)

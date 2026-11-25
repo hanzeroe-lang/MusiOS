@@ -280,7 +280,7 @@ private fun LocalOnlyRow() {
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Box(
-            Modifier.size(30.dp).clip(ContinuousRoundedRectangle(7.dp)).background(IosTheme.colors.systemOrange),
+            Modifier.size(30.dp).clip(ContinuousRoundedRectangle(7.dp)).background(Color.Transparent),
             contentAlignment = Alignment.Center,
         ) {
             Icon(painterResource(R.drawable.music_note), null, tint = Color.White, modifier = Modifier.size(18.dp))

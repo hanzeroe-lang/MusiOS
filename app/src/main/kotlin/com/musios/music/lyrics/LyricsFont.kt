@@ -4,6 +4,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontFamily
 import android.graphics.Typeface
+import com.musios.music.ui.theme.SfProFontFamily
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -21,7 +22,7 @@ fun rememberLyricsFont(selection: String): FontFamily {
                     require(selection.matches(Regex("custom-\\d+\\.font")))
                     FontFamily(Typeface.createFromFile(context.filesDir.resolve("lyrics-fonts").resolve(selection)))
                 }.getOrDefault(FontFamily.Default)
-            } else FontFamily.Default
+            } else SfProFontFamily
         }
     }
     return family

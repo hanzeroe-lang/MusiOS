@@ -562,7 +562,19 @@ fun GridItem(
             thumbnailContent()
         }
 
-        Spacer(modifier = Modifier.height(4.dp))
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(18.dp)
+                .background(
+                    androidx.compose.ui.graphics.Brush.verticalGradient(
+                        listOf(
+                            androidx.compose.ui.graphics.Color.Transparent,
+                            androidx.compose.ui.graphics.Color(0xFF121212).copy(alpha = 0.96f),
+                        )
+                    )
+                )
+        )
 
         // Keep artist cards stacked; a title-row badge would break their centering.
         if (horizontalAlignment == Alignment.CenterHorizontally) {

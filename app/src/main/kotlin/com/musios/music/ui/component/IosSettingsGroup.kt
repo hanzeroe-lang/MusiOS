@@ -177,6 +177,7 @@ private fun IosSettingsIconTile(icon: Painter, item: IosSettingsItem) {
                 modifier = Modifier
                     .size(IosMetrics.IconTileSize)
                     .clip(item.iconShape ?: ContinuousRoundedRectangle(IosMetrics.IconTileRadius)),
+                colorFilter = ColorFilter.tint(Color.White),
                 contentScale = ContentScale.Crop,
             )
         }

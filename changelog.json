@@ -1,41 +1,27 @@
 ﻿{
-  "description": "Kisetsu v1.2.0 — lyrics margins, simpler style options, player polish and full rebrand to Kisetsu.",
+  "description": "Kisetsu v1.3.0 — horizontal grab handle, white settings icons, tapered home card transitions, smaller tactile player and SF Pro Display font.",
   "image": "",
   "changelog": [
     {
-      "title": "Player & lyrics",
+      "title": "Player",
       "items": [
-        "Added comfortable side margins to the animated lyrics so letters are never clipped",
-        "Only BitChord and Simple lyrics styles remain available",
-        "Tap the mini album cover to close lyrics with animation",
-        "Added Apple-style vertical grab handle and small Playing from caption",
-        "Floating white quality badge showing only High Quality or Lossless"
+        "Horizontal low-opacity grab handle above the small Playing from caption",
+        "Player controls slightly smaller with light haptics on play, skip and like",
+        "Lyrics side margins keep every letter fully visible"
       ]
     },
     {
       "title": "Home & settings",
       "items": [
-        "Removed floating shuffle and voice buttons from Home",
-        "Removed Home filter tabs and tightened the layout",
-        "White settings icons with no tile background, tighter spacing",
-        "Accent colours changed from red to iOS blue"
+        "Tapered gradient blend between home card artwork and caption text",
+        "All settings icons now white with no coloured tile background"
       ]
     },
     {
-      "title": "Identity & updates",
+      "title": "Typography",
       "items": [
-        "Renamed the app and all user-facing branding to Kisetsu",
-        "Slightly zoomed out the app icon, still centred",
-        "In-app updates now point at this GitHub repository"
+        "Bundled SF-Pro-Display-Bold and made it the app's bold face and lyrics font"
       ]
-    }
-  ],
-  "versions": [
-    {
-      "version": "1.2.0",
-      "versionCode": 10200,
-      "date": "2026-11-26",
-      "changes": ["Lyrics margins, simpler styles, player polish, Kisetsu rebrand"]
     }
   ]
 }

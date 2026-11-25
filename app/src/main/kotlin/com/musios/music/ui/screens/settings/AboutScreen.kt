@@ -160,7 +160,7 @@ fun AboutScreen(
                     icon = rememberVectorPainter(SfSymbols.Monochrome.SFPersonCropCircleBadgeExclamationmark),
                     title = { Text(stringResource(R.string.developer_name)) },
                     description = { Text(stringResource(R.string.app_developer), color = AppTheme.colorScheme.primary) },
-                    tintIcon = false,
+                    tintIcon = true,
                     iconShape = cookieShape,
                     onClick = { uriHandler.safeOpenUri(context, "https://github.com/cosmictaserdev-creator") }
                 )
