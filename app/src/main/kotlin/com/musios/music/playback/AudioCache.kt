@@ -18,7 +18,7 @@ import java.io.IOException
 @UnstableApi
 object AudioCache {
 
-    private const val TAG = "ConvxAudioCache"
+    private const val TAG = "KisetsuAudioCache"
 
     private lateinit var cache: SimpleCache
 

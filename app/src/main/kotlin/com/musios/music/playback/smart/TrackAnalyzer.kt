@@ -743,7 +743,7 @@ class TrackAnalyzer(context: Context, private val cache: AudioCache) {
     }
 
     private companion object {
-        const val TAG = "ConvxTrackAnalyzer"
+        const val TAG = "KisetsuTrackAnalyzer"
         const val REQUEST_RETRY_MS = 1000L
 
         /**

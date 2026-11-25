@@ -87,14 +87,6 @@ fun AudioQualityBadge(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(4.dp),
         modifier = modifier
-            .shadow(
-                elevation = 2.dp,
-                shape = ContinuousRoundedRectangle(5.dp),
-                ambientColor = Color.Black.copy(alpha = 0.14f),
-                spotColor = Color.Black.copy(alpha = 0.18f),
-            )
-            .clip(ContinuousRoundedRectangle(5.dp))
-            .background(tint.copy(alpha = 0.15f))
             .clickable { showCard = true }
             .padding(horizontal = 8.dp, vertical = 1.dp),
     ) {
@@ -102,7 +94,7 @@ fun AudioQualityBadge(
             Icon(
                 painter = painterResource(R.drawable.ic_lossless),
                 contentDescription = null,
-                tint = if (chrome) VibrantChromeInk else tint,
+                tint = Color.White,
                 modifier = Modifier
                     .size(width = 15.dp, height = 8.dp)
                     .vibrantChrome(chrome),
@@ -111,7 +103,7 @@ fun AudioQualityBadge(
         Text(
             text = quality.label,
             style = TextStyle(fontSize = 11.sp, lineHeight = 14.sp, fontWeight = FontWeight.Normal),
-            color = if (chrome) VibrantChromeInk else tint,
+            color = Color.White,
             maxLines = 1,
             modifier = Modifier.vibrantChrome(chrome),
         )
@@ -136,22 +128,12 @@ fun audioQualityLabel(mime: String?, codecs: String?, bitrate: Int?, sampleRate:
         format in normalizedMime || format in normalizedCodecs
 
     return when {
-        containsFormat("ec-3") || containsFormat("eac3") || containsFormat("joc") || containsFormat("atmos") ->
-            AudioQuality("Dolby Atmos", lossless = false)
-        containsFormat("flac") || containsFormat("alac") -> {
-            val label = if ((sampleRate ?: 0) > 48_000) "Hi-Res Lossless" else "Lossless"
-            AudioQuality(label, lossless = true)
-        }
-        else -> {
-            val codec = when {
-                containsFormat("opus") -> "Opus"
-                containsFormat("mp4a") || containsFormat("aac") -> "AAC"
-                containsFormat("mp3") || containsFormat("mpeg") -> "MP3"
-                containsFormat("vorbis") -> "Vorbis"
-                else -> return null
-            }
-            AudioQuality(bitrate?.let { "$codec ${it / 1000} kbps" } ?: codec, lossless = false)
-        }
+        containsFormat("flac") || containsFormat("alac") -> AudioQuality("Lossless", lossless = true)
+        containsFormat("opus") || containsFormat("mp4a") || containsFormat("aac") ||
+            containsFormat("mp3") || containsFormat("mpeg") || containsFormat("vorbis") ||
+            containsFormat("ec-3") || containsFormat("eac3") || containsFormat("joc") || containsFormat("atmos") ->
+            AudioQuality("High Quality", lossless = false)
+        else -> return null
     }
 }
 

@@ -567,7 +567,7 @@ fun HomeScreen(
                         val dir = LocalLayoutDirection.current
                         PaddingValues(
                             start = ins.calculateStartPadding(dir),
-                            top = maxOf(ins.calculateTopPadding(), if (sideInset > 0.dp) 96.dp else 116.dp),
+                            top = maxOf(ins.calculateTopPadding(), if (sideInset > 0.dp) 80.dp else 96.dp),
                             end = ins.calculateRightPadding(dir),
                             bottom = ins.calculateBottomPadding(),
                         )
@@ -585,17 +585,6 @@ fun HomeScreen(
                                 modifier = Modifier.animateItem(),
                             )
                         }
-                    }
-
-                    item(key = "home_feed_filters", contentType = "home_feed_filters") {
-                        HomeFeedFilterRow(
-                            moodChips = if (showMoodFilters) homePage?.chips.orEmpty().filter { it.endpoint?.browseId?.isNotBlank() == true } else emptyList(),
-                            selectedChip = shownChip,
-                            onSelected = viewModel::toggleChip,
-                            scrollState = filterScrollState,
-                            sideInset = sideInset,
-                            modifier = Modifier.animateItem(),
-                        )
                     }
 
                     if (selectedChip == null) {
@@ -743,52 +732,6 @@ fun HomeScreen(
                     }
                 }
 
-                val (showHomeFab) = rememberPreference(ShowHomeFabKey, true)
-                if (showHomeFab) {
-                    HideOnScrollFAB(
-                        visible = allLocalItems.isNotEmpty() || allYtItems.isNotEmpty(),
-                        lazyListState = lazylistState,
-                        icon = R.drawable.shuffle,
-                        onClick = {
-                            val local = when {
-                                allLocalItems.isNotEmpty() && allYtItems.isNotEmpty() -> Random.nextFloat() < 0.5
-                                allLocalItems.isNotEmpty() -> true
-                                else -> false
-                            }
-                            scope.launch(Dispatchers.Main) {
-                                if (local) {
-                                    when (val luckyItem = allLocalItems.random()) {
-                                        is Song -> playerConnection.playQueue(YouTubeQueue.radio(luckyItem.toMediaMetadata()))
-                                        is Album -> {
-                                            val albumWithSongs = withContext(Dispatchers.IO) {
-                                                database.albumWithSongs(luckyItem.id).first()
-                                            }
-                                            albumWithSongs?.let {
-                                                playerConnection.playQueue(LocalAlbumRadio(it))
-                                            }
-                                        }
-                                        is Artist -> {}
-                                        is Playlist -> {}
-                                    }
-                                } else {
-                                    when (val luckyItem = allYtItems.random()) {
-                                        is SongItem -> playerConnection.playQueue(YouTubeQueue.radio(luckyItem.toMediaMetadata()))
-                                        is AlbumItem -> playerConnection.playQueue(YouTubeAlbumRadio(luckyItem.playlistId))
-                                        is ArtistItem -> luckyItem.radioEndpoint?.let {
-                                            playerConnection.playQueue(YouTubeQueue(it))
-                                        }
-                                        is PlaylistItem -> luckyItem.playEndpoint?.let {
-                                            playerConnection.playQueue(YouTubeQueue(it))
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        onRecognitionClick = {
-                            navController.navigate("recognition")
-                        }
-                    )
-                }
             }
         }
         }

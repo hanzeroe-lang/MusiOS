@@ -74,7 +74,7 @@ object LocalAudioScanner {
             val downloadExclusion = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 " AND (${MediaStore.MediaColumns.RELATIVE_PATH} IS NULL OR (" +
                     "${MediaStore.MediaColumns.RELATIVE_PATH} NOT LIKE '${DownloadExporter.FOLDER}/%'" +
-                    " AND ${MediaStore.MediaColumns.RELATIVE_PATH} NOT LIKE 'Music/Convx/%'))"
+                    " AND ${MediaStore.MediaColumns.RELATIVE_PATH} NOT LIKE 'Music/Kisetsu/%'))"
             } else {
                 ""
             }

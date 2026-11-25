@@ -142,7 +142,7 @@ Output MUST be a JSON array with EXACTLY $lineCount strings."""
                         }
                     }
                     .addHeader("Content-Type", "application/json")
-                    .addHeader("HTTP-Referer", "https://github.com/cosmictaserdev-creator/Convx")
+                    .addHeader("HTTP-Referer", "https://github.com/hanzeroe-lang/MusiOS")
                     .addHeader("X-Title", "convx")
                     .post(jsonBody.toString().toRequestBody(JSON))
                     .build()

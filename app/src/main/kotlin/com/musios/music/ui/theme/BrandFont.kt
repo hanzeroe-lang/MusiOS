@@ -15,7 +15,7 @@ import com.musios.music.constants.BrandFontEnabledKey
 import com.musios.music.utils.rememberPreference
 
 /** The product wordmark, always set in caps. */
-const val BrandName = "CONVX"
+const val BrandName = "KISETSU"
 
 /** Chillax — the display face used for the wordmark and artist names. */
 val ChillaxFontFamily = FontFamily(

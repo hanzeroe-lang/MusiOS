@@ -106,7 +106,7 @@ private fun IosSettingsItemRow(item: IosSettingsItem) {
                 onClick = item.onClick?.let { click -> { click() } },
             )
             .defaultMinSize(minHeight = maxOf(IosMetrics.ListRowHeight, 56.dp))
-            .padding(horizontal = 16.dp, vertical = 12.dp),
+            .padding(horizontal = 16.dp, vertical = 8.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         if (item.leadingContent != null) {
@@ -160,13 +160,7 @@ private fun IosSettingsIconTile(icon: Painter, item: IosSettingsItem) {
                 modifier = Modifier
                     .size(IosMetrics.IconTileSize)
                     .clip(item.iconShape ?: ContinuousRoundedRectangle(IosMetrics.IconTileRadius))
-                    .background(
-                        when {
-                            !item.enabled -> colors.systemGray3
-                            item.isHighlighted -> IosTheme.tint
-                            else -> IosTheme.tint.copy(alpha = 0.9f)
-                        }
-                    ),
+                    .background(Color.Transparent),
                 contentAlignment = Alignment.Center,
             ) {
                 Image(

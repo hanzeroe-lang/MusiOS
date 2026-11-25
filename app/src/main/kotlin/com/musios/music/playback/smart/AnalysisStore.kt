@@ -223,7 +223,7 @@ class AnalysisStore(private val context: Context) {
     }
 
     private companion object {
-        const val TAG = "ConvxAnalysisStore"
+        const val TAG = "KisetsuAnalysisStore"
         const val DIRECTORY = "smart_analysis"
 
         /**

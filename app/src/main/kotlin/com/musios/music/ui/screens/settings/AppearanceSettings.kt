@@ -182,7 +182,7 @@ fun AppearanceSettings(
     )
     val (lyricsAnimationStyle, onLyricsAnimationStyleChange) = rememberEnumPreference(
         LyricsAnimationStyleKey,
-        defaultValue = LyricsAnimationStyle.FLAMINGO
+        defaultValue = LyricsAnimationStyle.BITCHORD_ANIMATED
     )
     val (lyricsTextSize, onLyricsTextSizeChange) = rememberPreference(LyricsTextSizeKey, defaultValue = 30f)
     val (lyricsLineSpacing, onLyricsLineSpacingChange) = rememberPreference(LyricsLineSpacingKey, defaultValue = 1.3f)
@@ -793,7 +793,7 @@ enum class PlayerTextAlignment {
 
 @Composable
 fun ColumnScope.LyricsAnimationSheetContent() {
-    val (selected, onSelect) = rememberEnumPreference(LyricsAnimationStyleKey, defaultValue = LyricsAnimationStyle.FLAMINGO)
+    val (selected, onSelect) = rememberEnumPreference(LyricsAnimationStyleKey, defaultValue = LyricsAnimationStyle.BITCHORD_ANIMATED)
     val (position, onPositionChange) = rememberEnumPreference(LyricsTextPositionKey, defaultValue = LyricsPosition.LEFT)
     val (autoScroll, onAutoScrollChange) = rememberPreference(LyricsScrollKey, defaultValue = true)
     val (swipeToChange, onSwipeToChangeChange) = rememberPreference(SwipeLyricsKey, defaultValue = false)
@@ -984,7 +984,7 @@ fun ColumnScope.LyricsAnimationSheetContent() {
                 },
                 contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 16.dp),
             ) {
-                items(LyricsAnimationStyle.entries) { style ->
+                items(listOf(LyricsAnimationStyle.BITCHORD_ANIMATED, LyricsAnimationStyle.NONE)) { style ->
                     val active = style == selected
                     Text(
                         text = com.musios.music.ui.component.lyricsStyleLabel(style),

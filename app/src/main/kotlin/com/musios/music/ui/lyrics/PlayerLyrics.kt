@@ -1868,8 +1868,8 @@ internal fun LyricsPanel(
         contentPadding = PaddingValues(
             top = 40.dp - GLOW_ROOM,
             bottom = with(LocalDensity.current) { viewportHeight.toDp() } * 0.8f,
-            start = PLAYER_GUTTER - GLOW_ROOM,
-            end = PLAYER_GUTTER - GLOW_ROOM,
+            start = PLAYER_GUTTER - GLOW_ROOM + 16.dp,
+            end = PLAYER_GUTTER - GLOW_ROOM + 16.dp,
         ),
         verticalArrangement = Arrangement.spacedBy(0.dp),
     ) {

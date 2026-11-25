@@ -655,7 +655,7 @@ fun DiscordSettings(
                         IosSettingsItem(
                             title = { Text(stringResource(R.string.discord_button_2)) },
                             description = {
-                                Text(button2Text.ifEmpty { "Visit Convx" })
+                                Text(button2Text.ifEmpty { "Visit Kisetsu" })
                             },
                             trailingContent = {
                                 Switch(
@@ -876,16 +876,16 @@ fun RichPresence(
             if (button2Visible) {
                 val resolvedButton2 = if (song != null) {
                     DiscordRPC.resolveVariables(
-                        button2Text.ifEmpty { "Visit Convx" }, song
+                        button2Text.ifEmpty { "Visit Kisetsu" }, song
                     )
                 } else {
-                    button2Text.ifEmpty { "Visit Convx" }
+                    button2Text.ifEmpty { "Visit Kisetsu" }
                 }
                 OutlinedButton(
                     onClick = {
                         val intent = Intent(
                             Intent.ACTION_VIEW,
-                            "https://github.com/cosmictaserdev-creator/Convx".toUri()
+                            "https://github.com/hanzeroe-lang/MusiOS".toUri()
                         )
                         context.startActivity(intent)
                     },

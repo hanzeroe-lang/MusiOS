@@ -143,7 +143,7 @@ object TidalService {
     )
 
     // Browser-ish identity so instances that block bots/datacenter UAs still answer.
-    private const val UA = "Mozilla/5.0 (compatible; Convx/1.0)"
+    private const val UA = "Mozilla/5.0 (compatible; Kisetsu/1.0)"
 
     @Volatile private var cachedLive: List<String> = emptyList()
     @Volatile private var cachedAt: Long = 0L

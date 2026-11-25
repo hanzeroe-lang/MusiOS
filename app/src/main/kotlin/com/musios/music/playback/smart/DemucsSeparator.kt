@@ -282,7 +282,7 @@ internal class DemucsSeparator(private val context: Context) : AutoCloseable {
     }
 
     companion object {
-        private const val TAG = "ConvxDemucs"
+        private const val TAG = "KisetsuDemucs"
         const val STEMS = 4
         const val DRUMS = 0
         const val BASS = 1

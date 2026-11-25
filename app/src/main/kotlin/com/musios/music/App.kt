@@ -87,8 +87,8 @@ class App : Application(), SingletonImageLoader.Factory {
         if (processName == "$packageName:crash") return
         com.musios.music.canvas.AppleMusicCatalog.cacheDir = filesDir.resolve("apple_catalog")
         com.musios.music.core.UpdateNotificationHelper.cancelUpdateNotification(this)
-        // Eclipse addons identify clients by UA; they require "Convx/<app-version>".
-        com.music.spine.ModuleManager.userAgent = "Convx/${BuildConfig.VERSION_NAME}"
+        // Eclipse addons identify clients by UA; they require "Kisetsu/<app-version>".
+        com.music.spine.ModuleManager.userAgent = "Kisetsu/${BuildConfig.VERSION_NAME}"
 
         // StrictMode: debug-only, catches main-thread IO before it ships.
         // Release untouched — zero behavior change there.

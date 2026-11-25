@@ -767,7 +767,7 @@ fun BottomSheetPlayer(
         isPreviewOnly = isPreviewOnly,
     )
     val classicVideoStream = classicVideo.stream.takeIf { classicVideo.watch }
-    val videoSwitchEnabled by rememberPreference(com.musios.music.constants.ShowVideoSwitchKey, true)
+    val videoSwitchEnabled by rememberPreference(com.musios.music.constants.ShowVideoSwitchKey, false)
     var showRoutePopover by remember { mutableStateOf(false) }
     var showAudioDeviceBottomSheet by remember { mutableStateOf(false) }
     val enableGoogleCast by rememberPreference(EnableGoogleCastKey, defaultValue = true)

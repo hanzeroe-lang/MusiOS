@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.sp
  * Apple Music design tokens — single source of truth for colors, shapes, motion, and contrast helpers.
  */
 object AppleTokens {
-    val AccentRed = Color(0xFFFA2D48)
+    val AccentRed = Color(0xFF007AFF)
 
     // Surfaces — Apple-style soft dark greys, not pure black (pure black is an OLED opt-in via PureBlack).
     val Bg = Color(0xFF121212)

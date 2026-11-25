@@ -530,7 +530,7 @@ class VocalTracker(private val context: Context) {
     }
 
     companion object {
-        private const val TAG = "ConvxVocalTracker"
+        private const val TAG = "KisetsuVocalTracker"
         private const val MODEL_ASSET = "uvr_mdxnet_9482.onnx"
         private const val STALE_MODEL_ASSET = "vocals_umxhq_int8.onnx"
         private const val INFERENCE_THREADS = 1

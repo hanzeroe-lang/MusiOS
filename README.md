@@ -1,6 +1,6 @@
-# MusiOS
+# Kisetsu
 
-MusiOS is an Android music player based on **Convx 2.0.4-nightly**, rebuilt as a standalone, separately signed app.
+Kisetsu is an Android music player based on **Kisetsu 2.0.4-nightly**, rebuilt as a standalone, separately signed app.
 
 ## Highlights
 
@@ -21,10 +21,10 @@ Release signing uses `app/keystore/release.keystore` with credentials from `loca
 
 ## App identity
 
-- Name: **MusiOS**
-- Application ID: `com.musios.music`
+- Name: **Kisetsu**
+- Application ID: `com.kisetsu.music`
 - Icon: black music note on white background
 
 ## License
 
-Licensing inherited from the upstream Convx project. See [LICENSE](LICENSE).
+Licensing inherited from the upstream Kisetsu project. See [LICENSE](LICENSE).

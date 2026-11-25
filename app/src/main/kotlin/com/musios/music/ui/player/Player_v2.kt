@@ -846,16 +846,26 @@ private fun PlayerV2Content(
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 // The song / video switch replaces the grab pill whenever a video exists for the track.
-                val videoSwitchEnabled by rememberPreference(com.musios.music.constants.ShowVideoSwitchKey, true)
+                val videoSwitchEnabled by rememberPreference(com.musios.music.constants.ShowVideoSwitchKey, false)
                 val showVideoSwitch = canWatchVideo && videoSwitchEnabled && playerState == PlayerInternalState.COVER
-                if (!showVideoSwitch) Box(
-                    modifier = Modifier
-                        .width(54.dp)
-                        .height(5.dp)
-                        .clip(RoundedCornerShape(2.5.dp))
-                        .background(adaptivePrimary.copy(alpha = 0.3f))
-                        .clickable { state.collapseSoft() }
-                )
+                if (!showVideoSwitch) {
+                    Box(
+                        modifier = Modifier
+                            .width(4.dp)
+                            .height(24.dp)
+                            .clip(RoundedCornerShape(2.dp))
+                            .background(adaptivePrimary.copy(alpha = 0.3f))
+                            .clickable { state.collapseSoft() }
+                    )
+                    val sourceTitle by playerConnection.queueTitle.collectAsStateWithLifecycle()
+                    Text(
+                        text = sourceTitle?.let { "Playing from $it" } ?: "Playing from",
+                        color = adaptiveSecondary.copy(alpha = 0.55f),
+                        fontSize = 9.sp,
+                        maxLines = 1,
+                        modifier = Modifier.padding(top = 4.dp),
+                    )
+                }
                 val partyViewModel: com.musios.music.viewmodels.JamViewModel = androidx.hilt.navigation.compose.hiltViewModel()
                 val party by partyViewModel.session.collectAsStateWithLifecycle()
                 party?.let { PartyChip(it.code, it.members.size, adaptivePrimary) { state.collapseSoft(); navController.navigate("listen_together/party") } }
@@ -1265,7 +1275,7 @@ private fun PlayerV2Content(
                                             .background(adaptiveSurface, RoundedCornerShape(7.dp))
                                             .clip(RoundedCornerShape(7.dp))
                                             .then(
-                                                if (targetState == PlayerInternalState.QUEUE) {
+                                                if (targetState == PlayerInternalState.QUEUE || targetState == PlayerInternalState.LYRICS) {
                                                     Modifier.clickable { playerState = PlayerInternalState.COVER }
                                                 } else {
                                                     Modifier
@@ -1348,7 +1358,7 @@ private fun PlayerV2Content(
                                         IconButton(
                                             modifier = Modifier.size(40.dp),
                                             onClick = {
-                                                if (targetState == PlayerInternalState.QUEUE) {
+                                                if (targetState == PlayerInternalState.QUEUE || targetState == PlayerInternalState.LYRICS) {
                                                     showV2Options = true
                                                 } else {
                                                     mediaMetadata?.let { currentMetadata ->
@@ -1425,7 +1435,7 @@ private fun PlayerV2Content(
                                             exit = fadeOut(animationSpec = Motion.appearExit()) + slideOutVertically(animationSpec = Motion.appearExit()) { it }
                                         )
                                         .then(
-                                            if (targetState == PlayerInternalState.QUEUE) {
+                                            if (targetState == PlayerInternalState.QUEUE || targetState == PlayerInternalState.LYRICS) {
                                                 Modifier.nestedScroll(queueControlsScroll)
                                             } else {
                                                 Modifier

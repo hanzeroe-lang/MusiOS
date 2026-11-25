@@ -744,7 +744,7 @@ class CrossfadeController(
         cos(progress.coerceIn(0f, 1f) * PI.toFloat() / 2f)
 
     private companion object {
-        const val TAG = "ConvxCrossfade"
+        const val TAG = "KisetsuCrossfade"
 
         const val DEFAULT_SMART_FALLBACK_SECONDS = 6.0
 

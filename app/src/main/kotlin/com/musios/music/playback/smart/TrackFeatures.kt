@@ -147,7 +147,7 @@ object TrackFeatures {
         }
     }
 
-    private const val TAG = "ConvxTrackFeatures"
+    private const val TAG = "KisetsuTrackFeatures"
 
     @JvmStatic private external fun nativeAnalyze(
         samples: FloatArray,

@@ -136,7 +136,7 @@ object IosMetrics {
     val ListRowHeight: Dp = 44.dp
     val ListRowMinHeightWithSubtitle: Dp = 58.dp
     val ListRowInset: Dp = 16.dp
-    val SectionSpacing: Dp = 35.dp
+    val SectionSpacing: Dp = 22.dp
     val SeparatorThickness: Dp = 0.33.dp
     /** Corner radius for inset-grouped sections. */
     val GroupedCornerRadius: Dp = 26.dp

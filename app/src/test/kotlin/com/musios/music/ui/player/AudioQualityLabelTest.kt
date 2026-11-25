@@ -6,16 +6,16 @@ import org.junit.Test
 
 class AudioQualityLabelTest {
     @Test
-    fun `apple wording for lossless, hi-res and atmos`() {
+    fun `badge says only Lossless or High Quality`() {
         assertEquals(AudioQuality("Lossless", true), audioQualityLabel("audio/flac", null, 900_000, 44_100))
-        assertEquals(AudioQuality("Hi-Res Lossless", true), audioQualityLabel("audio/flac", null, null, 96_000))
-        assertEquals(AudioQuality("Dolby Atmos", false), audioQualityLabel("audio/mp4", "ec-3", 768_000, 48_000))
+        assertEquals(AudioQuality("Lossless", true), audioQualityLabel("audio/flac", null, null, 96_000))
+        assertEquals(AudioQuality("High Quality", false), audioQualityLabel("audio/mp4", "ec-3", 768_000, 48_000))
     }
 
     @Test
-    fun `lossy keeps codec and bitrate, unknown hides the badge`() {
-        assertEquals(AudioQuality("Opus 151 kbps", false), audioQualityLabel("audio/webm; codecs=\"opus\"", null, 151_018, 48_000))
-        assertEquals(AudioQuality("AAC", false), audioQualityLabel("audio/mp4", "mp4a.40.2", null, null))
+    fun `lossy and unknown formats`() {
+        assertEquals(AudioQuality("High Quality", false), audioQualityLabel("audio/webm; codecs=\"opus\"", null, 151_018, 48_000))
+        assertEquals(AudioQuality("High Quality", false), audioQualityLabel("audio/mp4", "mp4a.40.2", null, null))
         assertNull(audioQualityLabel(null, null, null, null))
     }
 

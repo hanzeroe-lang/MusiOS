@@ -29,8 +29,8 @@ object GlassTintTokens {
     const val HeroTintOpacityLight = 0.25f // was 0.15, +10% -> 0.25
 
     // §4.4. Accent Selected Red Tokens (iOS systemRed)
-    val AccentSelectedRedDark = Color(0xFFFF453A)  // #FF453A, dark mode
-    val AccentSelectedRedLight = Color(0xFFFF3B30) // #FF3B30, light mode
+    val AccentSelectedRedDark = Color(0xFF0A84FF)  // #FF453A, dark mode
+    val AccentSelectedRedLight = Color(0xFF007AFF) // #FF3B30, light mode
 
     // Light Mode Opaque Blackish Tokens (with NO transparency for high contrast on glass)
     val IconOpaqueBlackishLight = Color(0xFF111111) // #111111, opaque blackish (alpha = 1.0f)

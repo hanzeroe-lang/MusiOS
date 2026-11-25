@@ -201,7 +201,7 @@ class BeatTracker(private val context: Context) {
     }
 
     companion object {
-        private const val TAG = "ConvxBeatTracker"
+        private const val TAG = "KisetsuBeatTracker"
         // ConvInteger weights shifted int8 -> uint8 (+128, zero points too; exact): the
         // shipped onnxruntime-android has no int8-weight ConvInteger kernel, so the
         // original failed createSession with ORT_NOT_IMPLEMENTED and DJ ran gridless.

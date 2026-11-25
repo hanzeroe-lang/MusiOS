@@ -34,7 +34,7 @@ object StemStore {
 
 @UnstableApi
 object StemSeparator {
-    private const val TAG = "ConvxStemSeparator"
+    private const val TAG = "KisetsuStemSeparator"
 
     const val MAX_SECONDS = 12 * 60 // the whole track is decoded into memory
 

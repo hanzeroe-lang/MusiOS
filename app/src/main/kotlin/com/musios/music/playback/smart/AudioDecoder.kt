@@ -36,7 +36,7 @@ import kotlin.math.max
 /** Decodes bounded audio regions for [TrackAnalyzer]; failures return null so callers can fall back. */
 object AudioDecoder {
 
-    private const val TAG = "ConvxAudioDecoder"
+    private const val TAG = "KisetsuAudioDecoder"
     private const val TIMEOUT_US = 10_000L
     private const val MAX_STALL_MS = 5_000L
 

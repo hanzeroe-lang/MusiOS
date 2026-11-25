@@ -207,7 +207,7 @@ class TransitionFilterProcessor : BaseAudioProcessor() {
         value.coerceIn(Short.MIN_VALUE.toFloat(), Short.MAX_VALUE.toFloat()).toInt().toShort()
 
     companion object {
-        private const val TAG = "ConvxTransitionFilter"
+        private const val TAG = "KisetsuTransitionFilter"
 
         const val OPEN_HZ = 20_000f
 
