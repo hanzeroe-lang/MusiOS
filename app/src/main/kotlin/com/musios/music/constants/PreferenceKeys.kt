@@ -785,6 +785,8 @@ enum class LyricsAnimationStyle {
     APPLE,
     APPLE_V2,
     BITCHORD,
+    /** The full BitChord synced-lyrics animation port (frame clock, sweep, glow, falloff). */
+    BITCHORD_ANIMATED,
     CONVX_1,
     LYRICS_V2,
     METRO_LYRICS,

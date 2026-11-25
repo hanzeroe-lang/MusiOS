@@ -130,6 +130,8 @@ import com.musios.music.R
 import com.musios.music.constants.DarkModeKey
 import com.musios.music.constants.LyricsAnimationStyle
 import com.musios.music.constants.LyricsAnimationStyleKey
+import com.musios.music.ui.lyrics.BitchordLyricsView
+import com.musios.music.ui.lyrics.toBitChordLines
 import com.musios.music.constants.LyricsClickKey
 import com.musios.music.constants.LyricsGlowEffectKey
 import com.musios.music.constants.LyricsLineSpacingKey
@@ -456,7 +458,7 @@ fun Lyrics(
     val romanizeHindiLyrics by rememberPreference(LyricsRomanizeHindiKey, true)
     val romanizePunjabiLyrics by rememberPreference(LyricsRomanizePunjabiKey, true)
     val lyricsGlowEffect by rememberPreference(LyricsGlowEffectKey, true)
-    val lyricsAnimationStyle by rememberEnumPreference(LyricsAnimationStyleKey, LyricsAnimationStyle.FLAMINGO)
+    val lyricsAnimationStyle by rememberEnumPreference(LyricsAnimationStyleKey, LyricsAnimationStyle.BITCHORD_ANIMATED)
     val lyricsFontSelection by rememberPreference(com.musios.music.constants.LyricsFontKey, "default")
     val lyricsFontFamily = com.musios.music.lyrics.rememberLyricsFont(lyricsFontSelection)
     val lyricsTextSize by rememberPreference(LyricsTextSizeKey, 30f)
@@ -686,6 +688,23 @@ fun Lyrics(
         lines.hasKaraokeTimings()
     val usesFlamingoRenderer = lyricsAnimationStyle == LyricsAnimationStyle.FLAMINGO && lines.isNotEmpty()
     val hasProviderRow = isLyricsProviderShown && !usesArchiveTuneRenderer && !usesFlamingoRenderer
+
+    // The ported BitChord animation engine owns its own frame clock, scroll
+    // physics and word rendering, so it replaces this screen's line list rather
+    // than sharing its 10 Hz position state.
+    if (lyricsAnimationStyle == LyricsAnimationStyle.BITCHORD_ANIMATED) {
+        val bitChordPlaying by playerConnection.isPlaying.collectAsStateWithLifecycle()
+        val bitChordOffset = currentSong?.song?.lyricsOffset ?: 0
+        BitchordLyricsView(
+            lines = lines.toBitChordLines(),
+            trackKey = mediaMetadata?.id ?: "lyrics",
+            positionMs = { currentPlaybackPosition + bitChordOffset },
+            isPlaying = bitChordPlaying,
+            onSeekToLine = { lineTimeMs -> playerConnection.seekTo((lineTimeMs - bitChordOffset).coerceAtLeast(0L)) },
+            modifier = modifier.fillMaxSize(),
+        )
+        return
+    }
 
     val lazyListState = rememberLazyListState()
     
