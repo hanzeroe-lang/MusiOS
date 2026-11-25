@@ -1,15 +1,21 @@
 ﻿{
   "versions": [
     {
+      "version": "1.1.0",
+      "versionCode": 10100,
+      "date": "2026-11-25",
+      "changes": [
+        "Ported the full BitChord synced-lyrics animation engine",
+        "Frame-steered playhead clock, word sweep, glow, falloff blur/scale and staggered scroll",
+        "Lyrics now driven by live player position and word-timed lyrics data",
+        "New selectable and default lyrics style: BitChord (full animation)"
+      ]
+    },
+    {
       "version": "1.0.0",
       "versionCode": 10000,
-      "date": "2026-11-22",
-      "changes": [
-        "Initial MusiOS release, based on Convx 2.0.4-nightly",
-        "Rebranded as a standalone app (com.musios.music)",
-        "New MusiOS icon: black music note on white background",
-        "Signed release APK"
-      ]
+      "date": "2026-11-23",
+      "changes": ["Initial MusiOS release based on Convx 2.0.4-nightly"]
     }
   ]
 }
