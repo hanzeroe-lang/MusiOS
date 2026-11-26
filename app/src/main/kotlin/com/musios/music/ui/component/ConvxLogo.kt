@@ -27,7 +27,7 @@ import com.musios.music.ui.ios.compat.AppTheme
 fun ConvxLogo(modifier: Modifier = Modifier, size: Dp = 20.dp) {
     val isDark = AppTheme.colorScheme.surface.luminance() <= 0.5f
     Image(
-        painter = painterResource(R.drawable.convx_logo),
+        painter = painterResource(R.drawable.kisetsu_logo),
         contentDescription = null,
         colorFilter = ColorFilter.tint(if (isDark) Color.White else Color.Black),
         modifier = modifier.size(size),

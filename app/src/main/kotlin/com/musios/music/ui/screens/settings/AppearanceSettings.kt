@@ -387,7 +387,7 @@ fun AppearanceSettings(
                     onClick = { navController.navigate("settings/appearance/font") }
                 ),
                 IosSettingsItem(
-                    icon = painterResource(R.drawable.convx_logo),
+                    icon = painterResource(R.drawable.kisetsu_logo),
                     title = { Text(stringResource(R.string.app_icon)) },
                     description = { Text(stringResource(R.string.app_icon_desc)) },
                     onClick = { navController.navigate("settings/appearance/appicon") }

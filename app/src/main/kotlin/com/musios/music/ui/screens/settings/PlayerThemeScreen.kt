@@ -764,8 +764,8 @@ private fun SlotPreviewBlock(slot: PlayerSlot, artworkUrl: String?) {
                     model = artworkUrl,
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
-                    fallback = painterResource(R.drawable.convx_logo),
-                    error = painterResource(R.drawable.convx_logo),
+                    fallback = painterResource(R.drawable.kisetsu_logo),
+                    error = painterResource(R.drawable.kisetsu_logo),
                     modifier = Modifier.fillMaxSize(),
                 )
             }
@@ -947,8 +947,8 @@ private fun PlayerPreview(
                 model = artworkUrl,
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
-                fallback = painterResource(R.drawable.convx_logo),
-                error = painterResource(R.drawable.convx_logo),
+                fallback = painterResource(R.drawable.kisetsu_logo),
+                error = painterResource(R.drawable.kisetsu_logo),
                 modifier = Modifier.fillMaxSize(),
             )
             if (previewShape == CircleShape && artworkStyle == PlayerArtworkStyle.VINYL) {

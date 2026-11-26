@@ -73,7 +73,7 @@ fun rememberNoArtworkPainter(
     tintAlpha: Float = 0.35f,
     fillAlpha: Float = 0.18f,
 ): androidx.compose.ui.graphics.painter.Painter {
-    val logoPainter = painterResource(R.drawable.convx_logo)
+    val logoPainter = painterResource(R.drawable.kisetsu_logo)
     return remember(logoPainter, tintAlpha, fillAlpha) {
         object : androidx.compose.ui.graphics.painter.Painter() {
             override val intrinsicSize = androidx.compose.ui.geometry.Size.Unspecified

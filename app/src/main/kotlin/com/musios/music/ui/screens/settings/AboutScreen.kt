@@ -138,7 +138,7 @@ fun AboutScreen(
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 Image(
-                    painter = painterResource(R.drawable.convx_logo),
+                    painter = painterResource(R.drawable.kisetsu_logo),
                     contentDescription = null,
                     modifier = Modifier.size(24.dp),
                     colorFilter = ColorFilter.tint(AppTheme.colorScheme.primary)

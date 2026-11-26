@@ -167,7 +167,7 @@ object SettingsHubs {
                 "App",
                 listOf(
                     SettingsLink("Font", R.drawable.alphabet_cyrillic, { systemGray }, route("settings/appearance/font"), "App typeface"),
-                    SettingsLink("App icon", R.drawable.convx_logo, { systemBlue }, route("settings/appearance/appicon"), "Home screen icon"),
+                    SettingsLink("App icon", R.drawable.kisetsu_logo, { systemBlue }, route("settings/appearance/appicon"), "Home screen icon"),
                     SettingsLink("Layout & home", R.drawable.sliders, { systemGreen }, route("settings/appearance"),
                         "Language, default tab, density, home", "language default tab density refresh rate"),
                     SettingsLink("Home feed order", R.drawable.sliders, { systemOrange }, route("settings/home_feed_order"), "Arrange home sections"),

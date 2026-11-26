@@ -241,7 +241,7 @@ object ComposeToImage {
         val logoBoxRect = RectF(padding, footerY, padding + logoBoxSize, footerY + logoBoxSize)
         canvas.drawOval(logoBoxRect, logoBgPaint)
         
-        val rawLogo = context.getDrawable(R.drawable.convx_logo)?.toBitmap()
+        val rawLogo = context.getDrawable(R.drawable.kisetsu_logo)?.toBitmap()
         rawLogo?.let {
             val logoPaint = Paint().apply {
                 // Match the preview by tinting the logo with the selected background color.

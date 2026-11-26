@@ -1,18 +1,11 @@
 ﻿{
-  "description": "Kisetsu v1.4.0 — Kisetsu launch logo, normal text spacing and play/pause haptics.",
+  "description": "Kisetsu v1.4.1 — corrected launch logo to the Kisetsu music note.",
   "image": "",
   "changelog": [
     {
-      "title": "Launch & typography",
+      "title": "Identity",
       "items": [
-        "Launch animation now shows the Kisetsu mark instead of the Convx logo",
-        "Letter spacing reset to normal across the app; word gaps tightened"
-      ]
-    },
-    {
-      "title": "Player",
-      "items": [
-        "Light haptic feedback on play/pause in both player designs"
+        "Replaced the wrong BitChord mark with the Kisetsu music-note logo in the launch animation and about screen"
       ]
     }
   ]

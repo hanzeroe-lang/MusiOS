@@ -378,7 +378,7 @@ private fun MockArtwork(style: MockupStyle, isPortrait: Boolean, modifier: Modif
         contentAlignment = Alignment.Center,
     ) {
         Image(
-            painter = painterResource(R.drawable.convx_logo),
+            painter = painterResource(R.drawable.kisetsu_logo),
             contentDescription = null,
             contentScale = ContentScale.Fit,
             modifier = Modifier.fillMaxSize(0.34f),
