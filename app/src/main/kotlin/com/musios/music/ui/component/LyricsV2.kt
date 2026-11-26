@@ -106,7 +106,7 @@ fun LyricsLineV2(
                 fontSize = if (entry.isBackground) (baseFontSize * 0.85f).sp else baseFontSize.sp,
                 fontWeight = FontWeight.Bold,
                 // Keep tracking proportional to the lyric size.
-                letterSpacing = ((if (entry.isBackground) baseFontSize * 0.85f else baseFontSize) * 0.012f).sp,
+                letterSpacing = 0.sp,
                 fontStyle = if (entry.isBackground) FontStyle.Italic else FontStyle.Normal,
                 lineHeight = lineHeight.coerceAtMost(baseFontSize * 1.3f).sp,
             ),
@@ -128,7 +128,7 @@ fun LyricsLineV2(
                 textAlign = agentTextAlign,
                 // Slightly tighten translated text.
                 fontWeight = FontWeight.Bold,
-                letterSpacing = (baseFontSize * 0.7f * -0.012f).sp,
+                letterSpacing = 0.sp,
                 modifier = Modifier.padding(top = 4.dp).fillMaxWidth(),
                 lineHeight = (baseFontSize * 0.7f * (lineHeight / baseFontSize).coerceAtMost(1.3f)).sp
             )
@@ -199,7 +199,7 @@ fun AnimatedWordV2(
             style = AppTheme.typography.headlineMedium.copy(
                 fontSize = fontSize.sp,
                 fontWeight = fontWeight,
-                letterSpacing = (fontSize * 0.012f).sp,
+                letterSpacing = 0.sp,
                 fontStyle = if (isBackground) FontStyle.Italic else FontStyle.Normal,
                 lineHeight = lineHeight.sp,
             ),
@@ -214,7 +214,7 @@ fun AnimatedWordV2(
                 style = AppTheme.typography.headlineMedium.copy(
                     fontSize = fontSize.sp,
                     fontWeight = fontWeight,
-                    letterSpacing = (fontSize * 0.012f).sp,
+                    letterSpacing = 0.sp,
                     fontStyle = if (isBackground) FontStyle.Italic else FontStyle.Normal,
                     lineHeight = lineHeight.sp,
                     shadow = if (glowAlpha > 0f) {

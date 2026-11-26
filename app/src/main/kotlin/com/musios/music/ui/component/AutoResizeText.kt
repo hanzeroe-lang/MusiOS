@@ -57,7 +57,7 @@ fun AutoResizeText(
         fontStyle = fontStyle,
         fontWeight = fontWeight,
         fontFamily = fontFamily,
-        letterSpacing = letterSpacing,
+        letterSpacing = 0.sp,
         textDecoration = textDecoration,
         textAlign = textAlign,
         lineHeight = lineHeight,

@@ -249,7 +249,7 @@ private val Rows = listOf(
 
 /** SF Pro at an explicit size — never the theme's font pick. */
 internal fun SfStyle(size: androidx.compose.ui.unit.TextUnit, line: androidx.compose.ui.unit.TextUnit, weight: FontWeight = FontWeight.Normal, tracking: androidx.compose.ui.unit.TextUnit = 0.sp) =
-    TextStyle(fontFamily = SfProFontFamily, fontSize = size, lineHeight = line, fontWeight = weight, letterSpacing = tracking)
+    TextStyle(fontFamily = SfProFontFamily, fontSize = size, lineHeight = line, fontWeight = weight, letterSpacing = 0.sp)
 
 /** Library category row with an icon, label, and divider. */
 @Composable

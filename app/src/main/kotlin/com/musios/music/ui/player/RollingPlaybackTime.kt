@@ -58,7 +58,7 @@ internal fun RollingPlaybackTime(
         fontSize = 10.sp,
         lineHeight = 18.sp,
         fontWeight = FontWeight.SemiBold,
-        letterSpacing = .35.sp,
+        letterSpacing = 0.sp,
     )).copy(fontFeatureSettings = "tnum")
     val measurer = rememberTextMeasurer()
     val density = LocalDensity.current

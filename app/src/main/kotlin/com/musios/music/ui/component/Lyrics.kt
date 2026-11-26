@@ -1654,7 +1654,7 @@ fun Lyrics(
                                                 fontSize = lyricsTextSize.sp,
                                                 color = expressiveAccent.copy(alpha = if (!isActiveLine) 1f else if (charProgress >= 1f) 1f else 0.3f + (0.7f * charProgress)),
                                                 fontWeight = FontWeight.Bold,
-                                                letterSpacing = (-0.5).sp
+                                                letterSpacing = 0.sp
                                             )
                                         }
                                         if (wordIndex < wordData.size - 1) {
@@ -1662,7 +1662,7 @@ fun Lyrics(
                     fontFamily = lyricsFontFamily,
                                                 text = " ",
                                                 fontSize = lyricsTextSize.sp,
-                                                letterSpacing = (-0.5).sp
+                                                letterSpacing = 0.sp
                                             )
                                         }
                                     }
@@ -1680,7 +1680,7 @@ fun Lyrics(
                                             textAlign = agentTextAlign,
                                             // Match the translation typography used in the player.
                                             fontWeight = FontWeight.Bold,
-                                            letterSpacing = (lyricsTextSize * 0.7f * -0.012f).sp,
+                                            letterSpacing = 0.sp,
                                             modifier = Modifier.padding(top = 4.dp).fillMaxWidth(),
                                             lineHeight = (lyricsTextSize * 0.7f * lyricsLineSpacing.coerceAtMost(1.3f)).sp
                                         )
@@ -1840,7 +1840,7 @@ fun Lyrics(
                                             textAlign = agentTextAlign,
                                             // Match the translation typography used in the player.
                                             fontWeight = FontWeight.Bold,
-                                            letterSpacing = (lyricsTextSize * 0.7f * -0.012f).sp,
+                                            letterSpacing = 0.sp,
                                             modifier = Modifier.padding(top = 4.dp).fillMaxWidth(),
                                     lineHeight = (lyricsTextSize * 0.7f * lyricsLineSpacing.coerceAtMost(1.3f)).sp
                                 )

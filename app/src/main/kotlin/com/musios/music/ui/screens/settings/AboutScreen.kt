@@ -119,7 +119,7 @@ fun AboutScreen(
                 style = AppTheme.typography.displaySmall.copy(
                     fontWeight = FontWeight.Bold,
                     fontSize = 48.sp,
-                    letterSpacing = 2.sp
+                    letterSpacing = 0.sp
                 ),
                 color = AppTheme.colorScheme.onSurface
             )

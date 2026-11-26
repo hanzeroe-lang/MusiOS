@@ -915,7 +915,7 @@ fun RotatingShapeContainer(modifier: Modifier = Modifier) {
         )
 
         Icon(
-            painter = painterResource(com.musios.music.R.drawable.convx_logo),
+            painter = painterResource(com.musios.music.R.drawable.kisetsu_logo),
             contentDescription = null,
             modifier = Modifier.size(150.dp),
             tint = backgroundColor

@@ -725,7 +725,7 @@ private fun PlayerV2Content(
         Column(modifier = Modifier.weight(1f)) {
             FadeSwapText(
                 textMetadata?.title ?: "Unknown",
-                style = AppTheme.typography.bodyLarge.copy(fontSize = 16.sp, lineHeight = 21.sp, letterSpacing = (-0.43).sp),
+                style = AppTheme.typography.bodyLarge.copy(fontSize = 16.sp, lineHeight = 21.sp, letterSpacing = 0.sp),
                 color = adaptivePrimary,
                 fontWeight = FontWeight.SemiBold,
                 scroll = !state.isCollapsed,
@@ -736,7 +736,7 @@ private fun PlayerV2Content(
             )
             FadeSwapText(
                 textMetadata?.artists?.joinToString { it.name }.orEmpty(),
-                style = AppTheme.typography.bodyLarge.copy(fontSize = 16.sp, lineHeight = 21.sp, letterSpacing = (-0.43).sp),
+                style = AppTheme.typography.bodyLarge.copy(fontSize = 16.sp, lineHeight = 21.sp, letterSpacing = 0.sp),
                 color = artistLabelColor,
                 fontWeight = FontWeight.Normal,
                 scroll = !state.isCollapsed,
@@ -1302,7 +1302,7 @@ private fun PlayerV2Content(
                                     Column(modifier = Modifier.weight(1f)) {
                                         Text(
                                             textMetadata?.title ?: "Unknown",
-                                            style = AppTheme.typography.bodyLarge.copy(fontSize = 16.sp, lineHeight = 21.sp, letterSpacing = (-0.43).sp),
+                                            style = AppTheme.typography.bodyLarge.copy(fontSize = 16.sp, lineHeight = 21.sp, letterSpacing = 0.sp),
                                             color = adaptivePrimary,
                                             fontWeight = FontWeight.SemiBold,
                                             maxLines = 1,
@@ -1317,7 +1317,7 @@ private fun PlayerV2Content(
                                         )
                                         Text(
                                             textMetadata?.artists?.joinToString { it.name }.orEmpty(),
-                                            style = AppTheme.typography.bodyLarge.copy(fontSize = 16.sp, lineHeight = 21.sp, letterSpacing = (-0.43).sp),
+                                            style = AppTheme.typography.bodyLarge.copy(fontSize = 16.sp, lineHeight = 21.sp, letterSpacing = 0.sp),
                                             fontWeight = FontWeight.Normal,
                                             color = artistLabelColor,
                                             maxLines = 1,
@@ -1665,6 +1665,7 @@ private fun PlayerV2Content(
                                 if (isListenTogetherGuest) {
                                     playerConnection.toggleMute()
                                 } else {
+                                    haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
                                     playerConnection.player.togglePlayPause()
                                 }
                             },

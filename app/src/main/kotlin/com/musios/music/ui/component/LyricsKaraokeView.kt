@@ -63,7 +63,7 @@ fun KaraokeLyrics(
         lineHeight = (fontSize * lineSpacing).sp,
         fontWeight = FontWeight.Bold,
         // Keep tracking proportional to the lyric size.
-        letterSpacing = (fontSize * 0.012f).sp,
+        letterSpacing = 0.sp,
         shadow = if (wordGlowEnabled) androidx.compose.ui.graphics.Shadow(
             color = textColor.copy(alpha = 0.24f),
             offset = androidx.compose.ui.geometry.Offset.Zero,
@@ -76,7 +76,7 @@ fun KaraokeLyrics(
         fontSize = (fontSize * 0.82f).sp,
         lineHeight = (fontSize * 0.82f * lineSpacing).sp,
         fontWeight = FontWeight.Bold,
-        letterSpacing = (fontSize * 0.82f * 0.012f).sp,
+        letterSpacing = 0.sp,
         shadow = if (wordGlowEnabled) androidx.compose.ui.graphics.Shadow(
             color = textColor.copy(alpha = 0.18f),
             offset = androidx.compose.ui.geometry.Offset.Zero,

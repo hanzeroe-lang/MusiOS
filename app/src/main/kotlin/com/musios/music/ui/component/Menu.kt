@@ -175,7 +175,7 @@ private fun IosMenuItemRow(item: IosMenuItemData) {
                 contentColor,
                 IosTheme.typography.body.copy(
                     fontSize = 17.sp,
-                    letterSpacing = (-0.43).sp,
+                    letterSpacing = 0.sp,
                 )
             ) { item.title() }
             item.description?.let { desc ->

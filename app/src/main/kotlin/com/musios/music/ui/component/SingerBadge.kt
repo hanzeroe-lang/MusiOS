@@ -106,7 +106,7 @@ fun SingerBadge(
             text = name,
             fontSize = 12.sp,
             fontWeight = FontWeight.SemiBold,
-            letterSpacing = 0.4.sp,
+            letterSpacing = 0.sp,
             color = color,
             maxLines = 1,
         )

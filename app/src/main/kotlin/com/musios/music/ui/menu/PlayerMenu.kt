@@ -1194,7 +1194,7 @@ fun ListenTogetherDialog(
                                     style = AppTheme.typography.headlineLarge,
                                     color = AppTheme.colorScheme.primary,
                                     fontWeight = FontWeight.Bold,
-                                    letterSpacing = 6.sp
+                                    letterSpacing = 0.sp
                                 )
                             }
                             if (isHost) {

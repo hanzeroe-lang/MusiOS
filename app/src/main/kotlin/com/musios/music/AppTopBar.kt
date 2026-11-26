@@ -136,7 +136,7 @@ fun AppTopBar(
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 34.sp,
                                 lineHeight = 41.sp,
-                                letterSpacing = (-0.6).sp,
+                                letterSpacing = 0.sp,
                             ),
                             color = topBarTitleColor,
                             maxLines = 1,

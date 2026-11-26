@@ -317,7 +317,7 @@ inline fun ListItem(
                     lineHeight = titleLineHeight,
                     color = onSurface,
                     fontWeight = titleFontWeight,
-                    letterSpacing = titleLetterSpacing,
+                    letterSpacing = 0.sp,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                     modifier = titleChrome.sharedTitleSource(title),
@@ -621,7 +621,7 @@ fun GridItem(
             fontSize = AppleTokens.ItemTitle,
             lineHeight = AppleTokens.ItemTitleLineHeight,
             fontWeight = FontWeight.Normal,
-            letterSpacing = (-0.23).sp,
+            letterSpacing = 0.sp,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
             textAlign = if (horizontalAlignment == Alignment.CenterHorizontally) {

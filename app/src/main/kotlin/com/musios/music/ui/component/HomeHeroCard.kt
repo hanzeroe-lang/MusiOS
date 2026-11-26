@@ -273,7 +273,7 @@ private fun HeroPill(
             style = AppTheme.typography.labelLarge,
             fontSize = 17.sp,
             fontWeight = FontWeight.SemiBold,
-            letterSpacing = (-0.43).sp,
+            letterSpacing = 0.sp,
             color = Color.White,
             maxLines = 1,
         )

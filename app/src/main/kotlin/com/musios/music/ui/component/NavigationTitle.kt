@@ -32,6 +32,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
+import androidx.compose.ui.unit.sp
 import com.musios.music.R
 
 import com.musios.music.LocalAmbientBackgroundColor
@@ -104,7 +105,7 @@ fun NavigationTitle(
                     fontSize = AppleTokens.SectionHeader,
                     lineHeight = AppleTokens.SectionHeaderLineHeight,
                     fontWeight = FontWeight.Bold,
-                    letterSpacing = (-0.01).em,
+                    letterSpacing = 0.sp,
                     color = contentColor,
                     overflow = TextOverflow.Ellipsis,
                     maxLines = 1,

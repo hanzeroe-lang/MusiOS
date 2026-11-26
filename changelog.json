@@ -1,26 +1,18 @@
 ﻿{
-  "description": "Kisetsu v1.3.0 — horizontal grab handle, white settings icons, tapered home card transitions, smaller tactile player and SF Pro Display font.",
+  "description": "Kisetsu v1.4.0 — Kisetsu launch logo, normal text spacing and play/pause haptics.",
   "image": "",
   "changelog": [
     {
+      "title": "Launch & typography",
+      "items": [
+        "Launch animation now shows the Kisetsu mark instead of the Convx logo",
+        "Letter spacing reset to normal across the app; word gaps tightened"
+      ]
+    },
+    {
       "title": "Player",
       "items": [
-        "Horizontal low-opacity grab handle above the small Playing from caption",
-        "Player controls slightly smaller with light haptics on play, skip and like",
-        "Lyrics side margins keep every letter fully visible"
-      ]
-    },
-    {
-      "title": "Home & settings",
-      "items": [
-        "Tapered gradient blend between home card artwork and caption text",
-        "All settings icons now white with no coloured tile background"
-      ]
-    },
-    {
-      "title": "Typography",
-      "items": [
-        "Bundled SF-Pro-Display-Bold and made it the app's bold face and lyrics font"
+        "Light haptic feedback on play/pause in both player designs"
       ]
     }
   ]

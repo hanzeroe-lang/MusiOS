@@ -331,7 +331,7 @@ fun DropdownMenuItem(
         val rowColor = if (enabled) menuColors.label else menuColors.secondaryLabel
         val scope = rememberCoroutineScope()
         val glow = remember(scope) { InteractiveHighlight(animationScope = scope, spotAlpha = 0.2f) }
-        val rowStyle = IosTheme.typography.body.copy(fontSize = 17.sp, lineHeight = 20.sp, letterSpacing = (-0.43).sp)
+        val rowStyle = IosTheme.typography.body.copy(fontSize = 17.sp, lineHeight = 20.sp, letterSpacing = 0.sp)
         // Registered for press-and-slide selection from the trigger.
         val registry = LocalMenuRows.current
         val handle = remember { MenuRowHandle() }

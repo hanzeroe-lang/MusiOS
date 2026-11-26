@@ -299,7 +299,7 @@ private fun IosMenuRow(
                 style = IosTheme.typography.body.copy(
                     fontSize = 17.sp,
                     lineHeight = 20.sp,
-                    letterSpacing = (-0.43).sp,
+                    letterSpacing = 0.sp,
                 ),
             )
             if (item.description != null) {

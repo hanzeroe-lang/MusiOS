@@ -166,7 +166,7 @@ private fun InParty(session: JamSession, viewModel: JamViewModel) {
             Text(stringResource(R.string.jam_code), style = AppTheme.typography.labelMedium, color = AppTheme.colorScheme.onSurfaceVariant)
             Text(
                 text = session.code,
-                fontSize = 40.sp, fontWeight = FontWeight.Bold, letterSpacing = 6.sp,
+                fontSize = 40.sp, fontWeight = FontWeight.Bold, letterSpacing = 0.sp,
                 modifier = Modifier.padding(vertical = 8.dp),
             )
             Text(

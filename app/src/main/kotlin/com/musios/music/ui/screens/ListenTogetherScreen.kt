@@ -803,7 +803,7 @@ private fun SectionLabel(text: String) {
         text = text.uppercase(),
         style = AppTheme.typography.labelSmall,
         fontWeight = FontWeight.Bold,
-        letterSpacing = 1.2.sp,
+        letterSpacing = 0.sp,
         color = AppTheme.colorScheme.onSurfaceVariant
     )
 }
@@ -1058,7 +1058,7 @@ private fun JoinCreateRoomSection(
             placeholder = stringResource(R.string.enter_room_code),
             onFieldFocused = onFieldFocused,
             // Space characters so the room code is easy to distinguish.
-            letterSpacing = 4.sp,
+            letterSpacing = 0.sp,
             bold = true,
             modifier = Modifier.bringIntoViewRequester(bringIntoViewRequester)
         )
@@ -1101,12 +1101,12 @@ private fun EntryField(
         placeholder = {
             Text(
                 text = placeholder,
-                letterSpacing = letterSpacing,
+                letterSpacing = 0.sp,
                 color = AppTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f)
             )
         },
         textStyle = AppTheme.typography.bodyLarge.copy(
-            letterSpacing = letterSpacing,
+            letterSpacing = 0.sp,
             fontWeight = if (bold) FontWeight.Bold else FontWeight.Normal
         ),
         trailingIcon = trailing,

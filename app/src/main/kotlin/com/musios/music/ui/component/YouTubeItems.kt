@@ -239,7 +239,7 @@ fun YouTubeGridItem(
             style = AppTheme.typography.bodyMedium,
             fontSize = 15.sp,
             fontWeight = FontWeight.Normal,
-            letterSpacing = (-0.23).sp,
+            letterSpacing = 0.sp,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
             textAlign = if (item is ArtistItem) TextAlign.Center else TextAlign.Start,

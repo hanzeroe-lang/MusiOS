@@ -349,7 +349,7 @@ fun LyricsImageCard(
                         color = mainTextColor,
                         fontWeight = FontWeight.Bold,
                         textAlign = textAlign,
-                        letterSpacing = 0.005.em,
+                        letterSpacing = 0.sp,
                     )
 
                     val textMeasurer = rememberTextMeasurer()

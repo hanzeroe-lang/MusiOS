@@ -214,7 +214,7 @@ fun MetroLyricsLine(
         fontStyle = if (entry.isBackground) FontStyle.Italic else FontStyle.Normal,
         lineHeight = (lyricsTextSize * lyricsLineSpacing).sp,
         // Keep tracking proportional to the lyric size.
-        letterSpacing = (lyricsTextSize * 0.012f).sp,
+        letterSpacing = 0.sp,
         textAlign = agentTextAlign,
         platformStyle = PlatformTextStyle(includeFontPadding = false),
         lineHeightStyle = LineHeightStyle(
@@ -302,7 +302,7 @@ fun MetroLyricsLine(
                     color = expressiveAccent.copy(alpha = 0.8f),
                     textAlign = agentTextAlign,
                     fontWeight = FontWeight.Bold,
-                    letterSpacing = (16 * -0.012f).sp,
+                    letterSpacing = 0.sp,
                     modifier = Modifier.padding(top = 4.dp).fillMaxWidth(),
                     lineHeight = (16 * lyricsLineSpacing.coerceAtMost(1.3f)).sp
                 )

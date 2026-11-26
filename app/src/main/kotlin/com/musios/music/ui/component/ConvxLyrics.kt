@@ -237,7 +237,7 @@ fun ConvxLyricsLine(
                         ),
                         fontWeight = finalFontWeight,
                         // Keep tracking proportional to the lyric size.
-                        letterSpacing = (textSize * 0.012f).sp,
+                        letterSpacing = 0.sp,
                         // Cap internal line height for wrapped words
                         lineHeight = (textSize * lineSpacing.coerceAtMost(1.3f)).sp,
                         textAlign = agentTextAlign,
@@ -281,7 +281,7 @@ fun ConvxLyricsLine(
                     textAlign = agentTextAlign,
                     // Slightly tighten translated text.
                     fontWeight = FontWeight.Bold,
-                    letterSpacing = (textSize * 0.7f * -0.012f).sp,
+                    letterSpacing = 0.sp,
                     modifier = Modifier.padding(top = 4.dp).fillMaxWidth(),
                     lineHeight = (textSize * 0.7f * lineSpacing.coerceAtMost(1.3f)).sp
                 )

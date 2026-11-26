@@ -1030,7 +1030,7 @@ fun LazyItemScope.LyricItem(
                                                     .then(translationOtherSidePadding)
                                                     .padding(top = 5.dp),
                                                 lineHeight = (subTextSize + 5).sp,
-                                                letterSpacing = 0.3.sp,
+                                                letterSpacing = 0.sp,
                                                 textAlign = textAlign
                                             )
                                         }
@@ -1122,7 +1122,7 @@ val MainTextStyle = TextStyle(
     fontSize = 30.5.sp,
     lineHeight = 40.5.sp,
     fontWeight = FontWeight.ExtraBold,
-    letterSpacing = 0.05.sp,
+    letterSpacing = 0.sp,
     lineHeightStyle = LineHeightStyle(
         alignment = LineHeightStyle.Alignment.Center,
         trim = LineHeightStyle.Trim.None

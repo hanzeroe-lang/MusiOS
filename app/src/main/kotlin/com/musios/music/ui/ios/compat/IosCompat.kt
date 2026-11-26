@@ -54,6 +54,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import zone.ien.hig.CupertinoActivityIndicator
 import zone.ien.hig.CupertinoButton
 import zone.ien.hig.CupertinoButtonDefaults
@@ -191,7 +192,7 @@ private fun mergeTextStyle(
         fontFamily = fontFamily,
         textDecoration = textDecoration,
         fontStyle = fontStyle,
-        letterSpacing = letterSpacing,
+        letterSpacing = 0.sp,
     )
 }
 

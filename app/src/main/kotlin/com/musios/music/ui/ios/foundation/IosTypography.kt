@@ -39,7 +39,7 @@ fun iosTypography(fontFamily: FontFamily = FontFamily.Default): IosTypography {
         fontSize = size.sp,
         lineHeight = lineHeight.sp,
         fontWeight = weight,
-        letterSpacing = tracking.sp,
+        letterSpacing = 0.sp,
     )
 
     // Use stronger weights, tighter large-title tracking, and explicit line height
@@ -49,7 +49,7 @@ fun iosTypography(fontFamily: FontFamily = FontFamily.Default): IosTypography {
         fontSize = size.sp,
         lineHeight = (size * 1.2f).sp,
         fontWeight = weight,
-        letterSpacing = tracking.sp,
+        letterSpacing = 0.sp,
     )
 
     return IosTypography(

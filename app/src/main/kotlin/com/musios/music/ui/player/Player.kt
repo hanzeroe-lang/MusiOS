@@ -123,6 +123,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.semantics.clearAndSetSemantics
@@ -357,6 +359,7 @@ fun BottomSheetPlayer(
     val menuState = LocalMenuState.current
     val bottomSheetPageState = LocalBottomSheetPageState.current
     val playerConnection = LocalPlayerConnection.current ?: return
+    val haptic = LocalHapticFeedback.current
 
     // Both player styles use the same sheet and drag gestures.
     val (useAppleMusicPlayer) = rememberPreference(UseAppleMusicPlayerKey, defaultValue = true)
@@ -1799,7 +1802,8 @@ fun BottomSheetPlayer(
                                         .size(56.dp)
                                         .clip(ThumbnailRoundedShape)
                                         .clickable(enabled = isFullScreen && enableLyricsThumbnailPlayPause) {
-                                            playerConnection.togglePlayPause()
+                                            haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                                        playerConnection.togglePlayPause()
                                         }
                                 ) {
                                     AsyncImage(
@@ -2537,7 +2541,7 @@ fun BottomSheetPlayer(
                                         style = AppTheme.typography.labelSmall.copy(
                                             fontSize = 10.sp,
                                             fontWeight = FontWeight.Bold,
-                                            letterSpacing = 1.5.sp
+                                            letterSpacing = 0.sp
                                         ),
                                         color = TextBackgroundColor.copy(alpha = 0.8f),
                                         maxLines = 1,
@@ -2633,7 +2637,7 @@ fun BottomSheetPlayer(
                                         style = AppTheme.typography.labelSmall.copy(
                                             fontSize = 10.sp,
                                             fontWeight = FontWeight.Bold,
-                                            letterSpacing = 1.0.sp
+                                            letterSpacing = 0.sp
                                         ),
                                         color = TextBackgroundColor.copy(alpha = 0.8f),
                                         maxLines = 1,
@@ -2779,6 +2783,7 @@ fun BottomSheetPlayer(
                                         playerConnection.player.seekTo(0, 0)
                                         playerConnection.player.playWhenReady = true
                                     } else {
+                                        haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
                                         playerConnection.togglePlayPause()
                                     }
                                 },
@@ -2910,6 +2915,7 @@ fun BottomSheetPlayer(
                                             playerConnection.player.seekTo(0, 0)
                                             playerConnection.player.playWhenReady = true
                                         } else {
+                                            haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
                                             playerConnection.player.togglePlayPause()
                                         }
                                     },
@@ -3437,6 +3443,7 @@ fun InlineLyricsView(
     positionProvider: () -> Long
 ) {
     val playerConnection = LocalPlayerConnection.current ?: return
+    val haptic = LocalHapticFeedback.current
     val currentLyrics by playerConnection.currentLyrics.collectAsStateWithLifecycle(initialValue =null)
     val lyrics = remember(currentLyrics) { currentLyrics?.lyrics?.trim() }
     val context = LocalContext.current

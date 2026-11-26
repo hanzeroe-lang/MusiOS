@@ -219,7 +219,7 @@ fun CreatePlaylistDialog(
                         text = stringResource(R.string.new_playlist),
                         fontSize = 17.sp,
                         lineHeight = 22.sp,
-                        letterSpacing = (-0.43).sp,
+                        letterSpacing = 0.sp,
                         fontWeight = FontWeight.SemiBold,
                         color = colors.label,
                         modifier = Modifier.align(Alignment.Center),
@@ -269,7 +269,7 @@ fun CreatePlaylistDialog(
                 val fieldStyle = TextStyle(
                     fontSize = 20.sp,
                     lineHeight = 25.sp,
-                    letterSpacing = (-0.45).sp,
+                    letterSpacing = 0.sp,
                     fontWeight = FontWeight.SemiBold,
                     textAlign = TextAlign.Center,
                     color = colors.label,
@@ -320,7 +320,7 @@ fun CreatePlaylistDialog(
                         Text(
                             text = stringResource(R.string.sync_playlist),
                             fontSize = 15.sp,
-                            letterSpacing = (-0.23).sp,
+                            letterSpacing = 0.sp,
                             color = colors.label,
                             modifier = Modifier.weight(1f),
                         )

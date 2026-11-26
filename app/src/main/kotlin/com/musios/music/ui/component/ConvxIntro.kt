@@ -81,7 +81,7 @@ fun ConvxIntro(onFinished: () -> Unit) {
     // VectorPainter caches a bitmap at its draw size, and this glyph changes size every
     // frame (up to ~17x in the zoom) -- that re-rasterised into a fresh, eventually
     // multi-megapixel bitmap per frame, which is what made the intro stutter.
-    val logoVector = ImageVector.vectorResource(R.drawable.convx_logo)
+    val logoVector = ImageVector.vectorResource(R.drawable.kisetsu_logo)
     val logo = remember(logoVector) {
         Path().apply {
             fillType = PathFillType.EvenOdd

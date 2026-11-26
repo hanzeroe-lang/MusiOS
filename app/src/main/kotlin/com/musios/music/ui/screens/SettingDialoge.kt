@@ -138,7 +138,7 @@ fun SettingDialoge(
                         text = "KISETSU",
                         style = AppTheme.typography.titleMedium.copy(
                             fontWeight = FontWeight.Bold,
-                            letterSpacing = 1.sp
+                            letterSpacing = 0.sp
                         ),
                         color = onPrimaryColor,
                         textAlign = TextAlign.Center

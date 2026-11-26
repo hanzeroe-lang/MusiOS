@@ -240,7 +240,7 @@ fun DetailActionRow(
                     text = stringResource(if (isPlaying) R.string.pause else R.string.play),
                     fontSize = 17.sp,
                     fontWeight = FontWeight.SemiBold,
-                    letterSpacing = (-0.43).sp,
+                    letterSpacing = 0.sp,
                     color = tint,
                     maxLines = 1,
                 )

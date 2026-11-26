@@ -431,7 +431,7 @@ fun InfoItem(
             style = AppTheme.typography.labelMedium.copy(
                 fontFamily = FontFamily.Monospace,
                 fontWeight = FontWeight.Bold,
-                letterSpacing = 0.5.sp
+                letterSpacing = 0.sp
             ),
             color = AppTheme.colorScheme.onSurfaceVariant
         )

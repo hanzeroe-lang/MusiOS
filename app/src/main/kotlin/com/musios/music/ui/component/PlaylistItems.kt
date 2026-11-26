@@ -229,7 +229,7 @@ fun PlaylistGridItem(
             style = AppTheme.typography.bodyMedium,
             fontSize = 15.sp,
             fontWeight = FontWeight.Normal,
-            letterSpacing = (-0.23).sp,
+            letterSpacing = 0.sp,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
             modifier = Modifier.sharedTitleSource(playlist.playlist.name).fillMaxWidth()

@@ -1079,7 +1079,7 @@ fun Queue(
                             text = stringResource(R.string.queue_playing_next),
                             fontSize = 17.sp,
                             lineHeight = 22.sp,
-                            letterSpacing = (-0.43).sp,
+                            letterSpacing = 0.sp,
                             fontWeight = FontWeight.SemiBold,
                             color = chromePrimary,
                             maxLines = 1,
@@ -1089,7 +1089,7 @@ fun Queue(
                                 text = stringResource(R.string.queue_playing_from, source),
                                 fontSize = 17.sp,
                                 lineHeight = 22.sp,
-                                letterSpacing = (-0.43).sp,
+                                letterSpacing = 0.sp,
                                 color = QueueVibrantSecondary,
                                 maxLines = 1,
                                 overflow = TextOverflow.Ellipsis,
@@ -1103,7 +1103,7 @@ fun Queue(
                             text = stringResource(R.string.queue_clear),
                             fontSize = 17.sp,
                             lineHeight = 22.sp,
-                            letterSpacing = (-0.43).sp,
+                            letterSpacing = 0.sp,
                             color = QueueVibrantSecondary,
                             modifier = Modifier
                                 .additiveChrome(chromeAdditive)

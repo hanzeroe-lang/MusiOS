@@ -101,7 +101,7 @@ fun iosMaterialTypography(fontFamily: FontFamily = FontFamily.Default): Typograp
         fontSize = size.sp,
         lineHeight = (size * 1.2f).sp,
         fontWeight = weight,
-        letterSpacing = tracking.sp,
+        letterSpacing = 0.sp,
     )
 
     return Typography(
